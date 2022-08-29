@@ -1,0 +1,11 @@
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
+#ENV['LIBVIRT_DEFAULT_URI'] = 'qemu:///system'
+Vagrant.configure("2") do |config|
+  config.vm.define "teste" 
+  config.vm.box = "generic/ubuntu2204"
+  config.vm.hostname = "teste"
+  config.vm.provision "shell", inline: <<-SHELL
+    apt update -y
+    apt dist-upgrade -y
+  SHELL
+end
