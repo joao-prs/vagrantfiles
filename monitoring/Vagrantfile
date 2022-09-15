@@ -1,8 +1,8 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
-ENV['LIBVIRT_DEFAULT_URI'] = 'qemu:///session'
+#ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
+#ENV['LIBVIRT_DEFAULT_URI'] = 'qemu:///session'
 
 vms = {
     "master" => {'memory' => '2048', 'cpus' => 2, 'ip' => '10', 'box' => 'generic/ubuntu2004'},

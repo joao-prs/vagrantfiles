@@ -1,0 +1,7 @@
+#laboratorio de nodes com ansible
+
+Vagrant.configure("2") do |config|
+    (1..2).each do |i|
+        
+    end
+end
