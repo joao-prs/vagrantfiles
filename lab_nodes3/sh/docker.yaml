@@ -1,0 +1,12 @@
+- hosts: all
+  become: yes
+  tasks:
+  - name: Instalando o docker
+    package:
+      name: ['docker.io', 'docker-compose']
+      state: present
+  - name: Garantindo inicialização do docker
+    service:
+      name: docker
+      state: started
+      enabled: yes

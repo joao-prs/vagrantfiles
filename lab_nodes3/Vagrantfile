@@ -1,7 +1,19 @@
 #laboratorio de nodes com ansible
+#ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
 
 Vagrant.configure("2") do |config|
     (1..2).each do |i|
-        
+        config.vm.define "node_#{i}" do |node|
+            node.vm.box = "generic/ubuntu2004"
+            node.vm.network :private_network,
+                :libvirt__network_name => "vaca",
+                #:libvirt__always_destroy => false,
+                :ip => "192.168.3.10#{i}"
+            #node.vm.provision "shell", path: "sh/script_#{i}.sh"
+            node.vm.provision :ansible do |ansible|
+                ansible.playbook = "./sh/docker.yaml"
+                #ansible.verbose = "vvv"
+            end
+        end
     end
 end
