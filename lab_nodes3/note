@@ -1,0 +1,17 @@
+node_1
+  |
+  +-docker
+      |
+      +-netbox
+      |
+      +-portainer
+
+node_2
+  |
+  +-postgres -> netbox
+  |
+  +-mysql -> portainer
+
+node_3
+  |
+  +-nfs_server -> netbox

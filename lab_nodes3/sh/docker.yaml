@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: node1
   become: yes
   tasks:
   - name: Instalando o docker
@@ -10,3 +10,22 @@
       name: docker
       state: started
       enabled: yes
+
+- hosts: node2
+  tasks:
+  - name: Instalando o bancos postgres e mariadb
+    package:
+      name: ['postgres', 'mariadb']
+      state: present
+  - name: Garantindo inicialização dos bancos
+    service:
+      name: ['postgres', 'mariadb']
+      state: started
+      enabled: yes
+
+- hosts: node3
+  tasks:
+  - name: configurando nfs
+    package:
+      name: nfs-kernel-server
+      state: present
