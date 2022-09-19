@@ -5,12 +5,14 @@ ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
 Vagrant.configure("2") do |config|
   config.vm.box = "generic/ubuntu2004"
   config.vm.hostname = "docker"
-  config.vm.provision "shell", inline: <<-SHELL
-    apt update -y
-#    apt upgrade -y
-#    apt dist-upgrade -y
-    apt install -y docker.io docker-compose
-    sudo systemctl enable docker
-    sudo systemctl start docker
-  SHELL
+  #config.vm.provision "shell", inline: <<-SHELL
+  #  apt update -y
+  #  apt upgrade -y
+  #  apt dist-upgrade -y
+  #  apt install -y docker.io docker-compose
+  #  sudo systemctl enable docker
+  #  sudo systemctl start docker
+  #SHELL
+  config.vm.provision "shell", path: "initial.sh"
 end
+
