@@ -1,0 +1,23 @@
+# ablubluble.yml
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: Instalando o Nginx >-<
+    package:
+      name: ['nginx']
+      state: present
+  - name: Garantindo inicialização do Nginx
+    service:
+      name: nginx
+      state: started
+      enabled: yes
+
+  - name: copy file to vm
+    vmware_guest_file_operation:
+      copy:
+        src: "/t.txt"
+        dest: "/home/vagrant/t.txt"
+        overwrite: False
+    delegate_to: localhost
+...

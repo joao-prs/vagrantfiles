@@ -1,0 +1,25 @@
+#laboratorio de nodes com ansible
+#ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
+
+Vagrant.configure("2") do |config|
+  config.vm.define "vm1" do |node1|
+    node1.vm.box = "generic/ubuntu2004"
+    node1.vm.provision "shell", path: "server.sh"
+    #node1.vm.provision "shell", path: "sh/script_#{i}.sh"
+    #node1.vm.provision :ansible do |ansible|
+    #  ansible.playbook = "./ym/server.yaml"
+    #  ansible.verbose = "vvv"
+    #end
+  end
+
+  config.vm.define "vm2" do |node2|
+    node2.vm.box = "generic/ubuntu2004"
+    node2.vm.provision "shell", path: "proxy.sh"
+    #node2.vm.provision "shell", path: "sh/script_#{i}.sh"
+    #node2.vm.provision :ansible do |ansible|
+    #  ansible.playbook = "./ym/proxy.yaml"
+    #  ansible.verbose = "vvv"
+    #end
+  end
+
+end
