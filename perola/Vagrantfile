@@ -3,7 +3,7 @@
 
 Vagrant.configure("2") do |config|
 
-  (1..2).each do |i|
+  (1..3).each do |i|
     config.vm.define "vm#{i}" do |node|
       node.vm.box = "generic/ubuntu2004"
       node.vm.network :private_network,
