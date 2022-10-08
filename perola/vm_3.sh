@@ -12,3 +12,10 @@ apt update
 #apt upgrade -y
 #apt dist-upgrade -y
 apt install -y mariadb-server
+
+
+#sudo mysql
+#CREATE DATABASE netbox;
+#CREATE USER 'netbox'@'%' IDENTIFIED BY 'netbox@234';
+#GRANT ALL PRIVILEGES ON netbox.* TO 'netbox'@'%';
+#FLUSH PRIVILEGES;
