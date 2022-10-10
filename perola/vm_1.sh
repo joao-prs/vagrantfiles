@@ -37,33 +37,26 @@ sudo docker-compose up -d
 #in home
 cd ..
 
-#mkdir /home/vagrant/netbox
-#cat <<EOF >>/home/vagrant/netbox/docker-compose.yml
-#version: '3.4'
-#services:
-#  netbox:
-#    image: lscr.io/linuxserver/netbox:latest
-#    ports:
-#      - 9001:8080
-#    environment:
-#      - PUID=1000
-#      - TZ=<TZ>
-#      - SUPERUSER_EMAIL=
-#      - SUPERUSER_PASSWORD=
-#      - ALLOWED_HOST=<ALLOWED_HOST>
-#      - DB_NAME=netbox
-#      - DB_USER=netbox
-#      - DB_PASSWORD=netbox@234
-#      - DB_HOST=192.168.3.103
-#      - DB_PORT=3306
-#      - REDIS_HOST=<REDIS_HOST>
-#      - REDIS_PORT=<REDIS_PORT>
-#      - REDIS_PASSWORD=<REDIS_PASSWORD>
-#      - REDIS_DB_TASK=<REDIS_DB_TASK>
-#      - REDIS_DB_CACHE=<REDIS_DB_CACHE>
-#    volumes:
-#      - netbox-media-files:/opt/netbox/netbox/media:z
-#    restart: unless-stopped
-#EOF
-#cd /home/vagrant/netbox
-#sudo docker-compose up -d
+mkdir /home/vagrant/grafana
+cat <<EOF >>/home/vagrant/grafana/docker-compose.yml
+version: "3.3"
+services:
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    volumes:
+      - grafana_test_data:/var/lib/grafana
+    ports:
+      - 9001:3000
+    networks:
+      - grafana-net
+
+networks:
+  grafana-net:
+    driver: bridge
+volumes:
+  grafana_test_data:
+EOF
+cd /home/vagrant/grafana
+sudo docker-compose up -d
+cd ..
