@@ -31,9 +31,9 @@ services:
     ports:
       - 9000:9000
 EOF
-cd /home/vagrant/portainer
-sudo docker-compose up -d
-
+#cd /home/vagrant/portainer
+#sudo docker-compose up -d
+sudo docker-compose -f portainer/docker-compose.yml up -d
 #in home
 cd ..
 
@@ -57,6 +57,7 @@ networks:
 volumes:
   grafana_test_data:
 EOF
-cd /home/vagrant/grafana
-sudo docker-compose up -d
-cd ..
+#cd /home/vagrant/grafana
+#sudo docker-compose up -d
+sudo docker-compose -f grafana/docker-compose.yml up -d
+#cd ..
