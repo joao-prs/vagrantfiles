@@ -16,8 +16,9 @@
   - name: copy file to vm
     vmware_guest_file_operation:
       copy:
-        src: "/t.txt"
+        src: "~/vagrant/vagrantfiles/perola/ym/t.txt"
         dest: "/home/vagrant/t.txt"
-        overwrite: False
-    delegate_to: localhost
+        owner: vagrant
+        group: vagrant
+        mode: 644
 ...
