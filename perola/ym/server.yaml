@@ -1,6 +1,7 @@
 # ablubluble.yml
 ---
-- hosts: all
+- name: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  hosts: all
   become: yes
   tasks:
   - name: Instalando o Nginx >-<
@@ -21,4 +22,3 @@
         owner: vagrant
         group: vagrant
         mode: 644
-...
