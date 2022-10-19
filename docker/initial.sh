@@ -1,10 +1,11 @@
 #!/bin/sh
 apt update -y
-apt upgrade -y
-apt dist-upgrade -y
+#apt upgrade -y
+#apt dist-upgrade -y
 apt install -y docker.io docker-compose
 sudo systemctl enable docker
 sudo systemctl start docker
+
 chmod -R 777 /etc/motd
 cat <<EOF >>/etc/motd
 ⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠛⠛⠿⠛⠉⣁⣠⣤⣤⣤⣤⣤⣤⣤⣈⣉⡉⠛⠿⢿⠟⠛⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
