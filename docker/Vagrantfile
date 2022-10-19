@@ -29,7 +29,7 @@ Vagrant.configure("2") do |config|
         :libvirt__network_name => "cavalo",
         #:libvirt__always_destroy => false,
         :ip => "192.168.3.10#{i}"
-      node.vm.hostname = "cavalo_#{vm_name}"
+      node.vm.hostname = "cavalo.#{vm_name}"
       node.vm.provision "shell", path: "sh/vm_#{vm_name}.sh"
       node.vm.provision :ansible do |ansible|
         ansible.playbook = "./ym/server.yaml"
