@@ -1,0 +1,30 @@
+---
+- hosts: all
+  become: true
+  tasks:
+
+  - name: install dockers
+    apt:
+      state: present
+      name:
+      - docker.io
+      - docker-compose
+      - htop
+
+  - name: Update /etc/hosts
+    blockinfile:
+        path: /etc/hosts
+        create: yes
+        block: |
+          127.0.0.1 localhost
+          192.168.3.101 horse-master
+          192.168.3.102 horse-node-1
+          192.168.3.103 horse-node-2
+          192.168.3.104 horse-proxy
+  
+  #- name: Get info on Docker Swarm
+  #  docker_swarm_info:
+  #  ignore_errors: yes
+  #  register: result
+
+...
