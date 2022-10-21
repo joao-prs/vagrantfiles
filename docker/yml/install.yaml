@@ -41,6 +41,10 @@
     debug: var=ansible_eth0.ipv4.address
     #debug: var=hostvars[inventory_hostname]['ansible_default_ipv6']['address']
 
+##
+## daqui pra baixo é tudo descartavel
+##
+##
 
 - hosts: all
   become: true
