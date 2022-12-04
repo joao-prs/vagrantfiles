@@ -1,0 +1,23 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
+
+Vagrant.configure("2") do |config|
+  config.vm.define :ubuntuLvm do |ubt|
+    ubt.vm.box = "generic/ubuntu2004"
+    ubt.vm.hostname = "ubu-lvm"
+    #ubt.vm.disk :disk, size: "2GB", name: "extra_storage1"
+    ubt.vm.provider :libvirt do |libvirt|
+      libvirt.cpus = 2
+      libvirt.memory = 2048
+      libvirt.default_prefix = ""
+      libvirt.nested = true
+      libvirt.storage :file,
+        #:path => '',		# automatically chosen if unspecified!
+        #:device => 'vdb',	# automatically chosen if unspecified!
+        #:size => '10G',		# defaults to 10G if unspecified!
+        :type => 'qcow2'		# defaults to 'qcow2' if unspecified!
+    end
+  end
+end
