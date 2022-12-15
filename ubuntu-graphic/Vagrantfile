@@ -8,6 +8,7 @@ ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
 Vagrant.configure("2") do |config|
   config.vm.define :ubuntuTest do |ubt|
     ubt.vm.box = "codeup/Ubuntu-20.04-GUI"
+    #ubt.vm.box = "dmhughes/ubuntu-18.04-desktop-gui"
     ubt.vm.hostname = "ubu"
     ubt.vm.provider :libvirt do |libvirt|
       libvirt.cpus = 2
