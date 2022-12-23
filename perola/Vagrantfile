@@ -18,7 +18,6 @@ Vagrant.configure("2") do |config|
         ansible.verbose = "vvv"
       end
       node.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/id_rsa.pub"
-      
 
       #testando remover o prefixo do nome (nome em linha 8)
       node.vm.provider :libvirt do |libvirt|
@@ -28,11 +27,11 @@ Vagrant.configure("2") do |config|
         #libvirt.nested = true
       end
 
-
     end
     #config.vm.provision :ansible do |ansible|
     #  ansible.playbook = "./ym/server.yaml"
     #  ansible.verbose = "vvv"
     #end
+
   end
 end
