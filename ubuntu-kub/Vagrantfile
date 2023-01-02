@@ -1,4 +1,4 @@
- # -*- mode: ruby -*-
+# -*- mode: ruby -*-
 # vi: set ft=ruby :
 
 ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
@@ -6,22 +6,23 @@ ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
 #ENV['LIBVIRT_DEFAULT_URI'] = 'qemu:///system'
 
 Vagrant.configure("2") do |config|
-  (1..3).each do |k|
+  (1..1).each do |k|
     config.vm.define "kube_#{k}" do |kub|
       
       kub.vm.box = "generic/ubuntu2204"
-      kub.vm.hostname = "kube"
+      kub.vm.hostname = "kube-#{k}"
+      kub.vm.provision "shell", path: "basic.sh"
       # rede
       kub.vm.network :private_network,
         :libvirt__network_name => "kubnet",
         #:libvirt__always_destroy => false,
-        :ip => "192.168.3.10#{0 + k}"
-      end
+        :ip => "192.168.3.#{100 + k}"
+      #end
 
       # provider
       kub.vm.provider :libvirt do |libvirt|
-        libvirt.cpus = 1
-        libvirt.memory = 1024
+        libvirt.cpus = 2
+        libvirt.memory = 2048
         libvirt.default_prefix = ""
       end
 

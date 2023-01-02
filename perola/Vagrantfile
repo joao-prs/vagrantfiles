@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
 
   (1..2).each do |i|
     # define o sufixo do nome (linha 8) <testando em linha 23>
-    config.vm.define "vm#{i}" do |node|
+    config.vm.define vm"#{i}" do |node|
       node.vm.box = "generic/ubuntu2004"
       node.vm.network :private_network,
         :libvirt__network_name => "cavalo",
@@ -35,3 +35,5 @@ Vagrant.configure("2") do |config|
 
   end
 end
+
+# casa_do_joao
