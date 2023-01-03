@@ -7,8 +7,8 @@ ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
 
 Vagrant.configure("2") do |config|
   (1..1).each do |k|
+    
     config.vm.define "kube_#{k}" do |kub|
-      
       kub.vm.box = "generic/ubuntu2204"
       kub.vm.hostname = "kube-#{k}"
       kub.vm.provision "shell", path: "basic.sh"
