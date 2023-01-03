@@ -1,7 +1,0 @@
-##  subir 4 vms
-#   todas com docker swarm
-#   uma vm como master e outras duas como vm nodes
-#   uma quarta vm como proxy
-
-##  se possivel...
-#   utilizar shellscript e ansible
