@@ -1,0 +1,22 @@
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
+#ENV['LIBVIRT_DEFAULT_URI'] = 'qemu:///system'
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "peru/windows-10-enterprise-x64-eval"
+  config.vm.box_version = "20230101.01"
+  #config.vm.hostname = "RDPWindows"
+  config.vm.provider :libvirt do |libvirt|
+    libvirt.default_prefix = "RDPWindows"
+    libvirt.cpus = 4
+    libvirt.memory = 4096
+  #config.winrm.max_tries = 300 # default is 20
+  #config.winrm.retry_delay = 2 #seconds. This is the defaul value and just here for documentation.
+  end
+end
+
+#https://stackoverflow.com/questions/97875/rm-rf-equivalent-for-windows
+
+# rd /s /q "path"
+# rd -r "path"
+#
+
