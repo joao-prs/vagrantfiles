@@ -19,3 +19,9 @@ Vagrant.configure("2") do |config|
     end
   end
 end
+
+# vagrantfile
+# ├── vagrant
+# │   ├── sh
+# │   └── yml
+# └── db
