@@ -1,8 +1,5 @@
-ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
-#ENV['LIBVIRT_DEFAULT_URI'] = 'qemu:///system'
-
 Vagrant.configure("2") do |config|
-  config.vm.box = "peru/windows-10-enterprise-x64-eval"
+  config.vm.box = "gusztavvargadr/windows-10"
   config.vm.box_version = "20230101.01"
   #config.vm.hostname = "RDPWindows"
   config.vm.provider :libvirt do |libvirt|
