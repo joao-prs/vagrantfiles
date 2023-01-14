@@ -5,15 +5,19 @@ ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
 #ENV['LIBVIRT_DEFAULT_URI'] = 'qemu:///system'
 
 Vagrant.configure("2") do |config|
-  config.vm.define :ubuntuTest do |ubt|
+  config.vm.define :ubuntuAnsible do |ubt|
     ubt.vm.box = "generic/ubuntu2004"
-    ubt.vm.hostname = "ubu"
+    ubt.vm.hostname = "ansible"
     ubt.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/id_rsa.pub"
     #ubt.vm.provision "shell", path: "netplan.sh"
     ubt.vm.provider :libvirt do |libvirt|
       libvirt.cpus = 2
       libvirt.memory = 2048
       libvirt.default_prefix = ""
+    end
+    ubt.vm.provision :ansible do |ansible|
+      ansible.playbook = "jota.yaml"
+      ansible.verbose = "vvv"
     end
   end
 end
@@ -22,4 +26,5 @@ end
 # ├── vagrant
 # │   ├── id_rsa.pub
 # │   └── netplan config
-# └── vagrant
+# └── ansible
+#     └── RUN vagrant provision
