@@ -1,30 +1,38 @@
  # -*- mode: ruby -*-
 # vi: set ft=ruby :
 ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
-#ENV['LIBVIRT_DEFAULT_URI'] = 'qemu:///session'
-#ENV['LIBVIRT_DEFAULT_URI'] = 'qemu:///system'
 
 Vagrant.configure("2") do |config|
-  config.vm.define :ubuntuAnsible do |ubt|
-    ubt.vm.box = "generic/ubuntu2004"
-    ubt.vm.hostname = "ansible"
-    ubt.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/id_rsa.pub"
-    #ubt.vm.provision "shell", path: "netplan.sh"
-    ubt.vm.provider :libvirt do |libvirt|
-      libvirt.cpus = 2
-      libvirt.memory = 2048
-      libvirt.default_prefix = ""
+
+  (1..1).each do |unit|
+
+    config.vm.define "NodeAnsible#{unit}" do |ubt|
+      ubt.vm.box = "generic/ubuntu2004"
+      ubt.vm.provision "shell", path: "jota.sh"
+      ubt.vm.network :public_network, :dev => "wlp0s20f3", :ip => "192.168.2.112"
+        #:libvirt__network_name => "brotherhood",
+        #:type => "dhcp",
+        #:libvirt__always_destroy => false,ip
+        #:dhcp => "true"
+      ubt.vm.hostname = "ansible-node-#{unit}"
+      ubt.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/id_rsa.pub"
+      ubt.vm.provider :libvirt do |libvirt|
+        libvirt.cpus = 2
+        libvirt.memory = 2048
+        libvirt.default_prefix = ""
+      end
+      #ubt.vm.provision :ansible do |ansible|
+      #  ansible.playbook = "jota.yaml"
+      #  ansible.verbose = "vvv"
+      #end
     end
-    ubt.vm.provision :ansible do |ansible|
-      ansible.playbook = "jota.yaml"
-      ansible.verbose = "vvv"
-    end
-  end
+
+  end #each 
 end
 
 # vagrantfile
 # ├── vagrant
-# │   ├── id_rsa.pub
-# │   └── netplan config
+# │   ├── network brotherhood
+# │   └── id_rsa.pub
 # └── ansible
 #     └── RUN vagrant provision
