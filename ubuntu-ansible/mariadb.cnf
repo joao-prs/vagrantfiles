@@ -16,7 +16,7 @@ slow_query_log=OFF
 log_queries_not_using_indexes=OFF
 
 ### INNODB OPTIONS
-innodb_buffer_pool_size=2048M
+innodb_buffer_pool_size=70%
 innodb_flush_log_at_trx_commit=2
 innodb_file_per_table=1
 innodb_data_file_path=ibdata1:100M:autoextend
@@ -83,9 +83,9 @@ performance-schema-max-mutex-classes = 0
 performance-schema-max-mutex-instances = 0
 
 # Full path to wsrep provider library or 'none'
-wsrep_provider=/usr/lib64/galera-4/libgalera_smm.so
+wsrep_provider=/usr/lib/galera/libgalera_smm.so
 wsrep_on=ON
-wsrep_node_address=192.168.121.55
+wsrep_node_address=192.168.40.101
 
 # Provider specific configuration options
 wsrep_provider_options="base_port=4567;gcache.size=1024M;gmcast.segment=0;"
