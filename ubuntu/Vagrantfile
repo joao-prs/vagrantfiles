@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
   config.vm.define :ubuntuTest do |ubt|
     ubt.vm.box = "generic/ubuntu2004"
     ubt.vm.hostname = "ubu"
-    ubt.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/id_rsa.pub"
+    #ubt.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/id_rsa.pub"
     #ubt.vm.provision "shell", path: "netplan.sh"
     ubt.vm.provider :libvirt do |libvirt|
       libvirt.cpus = 2
