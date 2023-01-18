@@ -1,7 +1,7 @@
 chmod -R 777 /etc/motd
 cat <<EOF >>/etc/motd
 +----------------------------+
-| bem vindo ao mariadb admin |
+| bem vindo ao yametekudasai |
 +----------------------------+
 EOF
 chmod -R 744 /etc/motd
@@ -22,13 +22,6 @@ sudo apt-get install mariadb-server rsync -y
 
 #sudo mysql_secure_installation
 
-# Enter current password for root (enter for none):
-# Change the root password? [Y/n] n
-# Remove anonymous users? [Y/n] Y
-# Disallow root login remotely? [Y/n] Y
-# Remove test database and access to it? [Y/n] Y
-# Reload privilege tables now? [Y/n] Y
-
 
 cat <<EOF >>/etc/mysql/conf.d/galera.cnf
 [mysqld]
@@ -45,8 +38,8 @@ wsrep_cluster_address="gcomm://192.168.40.101,192.168.40.102,192.168.40.103"
 # Galera Synchronization Configuration
 wsrep_sst_method=rsync
 # Galera Node Configuration
-wsrep_node_address="192.168.40.10$unit"
-wsrep_node_name="master-mariadb"
+wsrep_node_address="192.168.40.102"
+wsrep_node_name="escravo2"
 EOF
 
 ufw allow 3306/tcp
@@ -59,6 +52,6 @@ ufw status
 
 # etapa 3
 systemctl stop mariadb
-/usr/bin/galera_new_cluster
+
 
 #mysql -u root -p -e "show status like 'wsrep_cluster_size'"

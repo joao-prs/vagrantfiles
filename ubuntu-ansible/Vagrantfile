@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
         :libvirt__network_name => "mariadb",
         :ip => "192.168.40.#{100 + unit}"
       
-      ubt.vm.hostname = "ansible-node-#{unit}"
+      ubt.vm.hostname = "node-master"
       #ubt.vm.provision "file", source: "~/.ssh/id_ed25519.pub", destination: "~/.ssh/id_ed25519.pub"
       ubt.vm.provider :libvirt do |libvirt|
         libvirt.cpus = 2
@@ -32,13 +32,13 @@ Vagrant.configure("2") do |config|
   (2..3).each do |unit|
     config.vm.define "Node#{unit}" do |ubt|
       ubt.vm.box = "generic/ubuntu2004"
-      ubt.vm.provision "shell", path: "pe.sh", args: "unit=#{unit}"
+      ubt.vm.provision "shell", path: "pe#{unit}.sh", args: "unit=#{unit}"
       # rede
       ubt.vm.network :private_network,
         :libvirt__network_name => "mariadb",
         :ip => "192.168.40.#{100 + unit}"
       
-      ubt.vm.hostname = "ansible-node-#{unit}"
+      ubt.vm.hostname = "node-#{unit}"
       #ubt.vm.provision "file", source: "~/.ssh/id_ed25519.pub", destination: "~/.ssh/id_ed25519.pub"
       ubt.vm.provider :libvirt do |libvirt|
         libvirt.cpus = 2
