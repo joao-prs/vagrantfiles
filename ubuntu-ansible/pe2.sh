@@ -52,6 +52,6 @@ ufw status
 
 # etapa 3
 systemctl stop mariadb
-
+#systemctl start mariadbaaaaaaaaaaaaaaaaaa
 
 #mysql -u root -p -e "show status like 'wsrep_cluster_size'"
