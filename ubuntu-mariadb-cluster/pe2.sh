@@ -1,8 +1,8 @@
 chmod -R 777 /etc/motd
 cat <<EOF >>/etc/motd
-+----------------------------+
-| bem vindo ao yametekudasai |
-+----------------------------+
++-------------------------------+
+|  bem vindo ao mariadb NODE 2  |
++-------------------------------+
 EOF
 chmod -R 744 /etc/motd
 
@@ -18,6 +18,10 @@ add-apt-repository 'deb [arch=amd64,i386,ppc64el] http://ftp.utexas.edu/mariadb/
 apt-get update -y
 
 sudo apt-get install mariadb-server rsync -y
+
+# NOC SEA Telecom  | 128
+# SEA Telecom      | 2
+# IoT              | 2
 
 
 #sudo mysql_secure_installation

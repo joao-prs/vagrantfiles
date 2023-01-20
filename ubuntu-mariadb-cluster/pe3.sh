@@ -1,8 +1,8 @@
 chmod -R 777 /etc/motd
 cat <<EOF >>/etc/motd
-+----------------------------+
-| bem vindo ao yametekudasai |
-+----------------------------+
++-------------------------------+
+|  bem vindo ao mariadb NODE 3  |
++-------------------------------+
 EOF
 chmod -R 744 /etc/motd
 

@@ -64,3 +64,6 @@ end
 # systemctl start mariadb
 
 # wsrep_cluster_address=gcomm://192.168.121.55,192.168.121.56,192.168.121.204
+
+
+

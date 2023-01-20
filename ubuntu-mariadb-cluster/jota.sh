@@ -1,8 +1,8 @@
 chmod -R 777 /etc/motd
 cat <<EOF >>/etc/motd
-+----------------------------+
-| bem vindo ao mariadb admin |
-+----------------------------+
++-------------------------------+
+|  bem vindo ao mariadb MASTER  |
++-------------------------------+
 EOF
 chmod -R 744 /etc/motd
 
