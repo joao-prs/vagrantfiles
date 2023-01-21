@@ -23,6 +23,7 @@ apt install -y docker.io docker-compose
 sudo systemctl enable docker
 sudo systemctl start docker
 
+usermod -aG docker vagrant
 
 mkdir /home/vagrant/nginx
 cat <<EOF >>/home/vagrant/nginx/docker-compose.yaml
