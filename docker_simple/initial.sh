@@ -43,33 +43,36 @@ cd /home/vagrant/nginx
 docker-compose up -d
 
 
-
 mkdir /home/vagrant/phpipam
 cat <<EOF >>/home/vagrant/phpipam/docker-compose.yaml
 version: '3.3'
 services:
-  mysql:
-    image: 'mysql:5.6' ##'mysql:8.0'
+  db:
+    image: 'mysql:8.0'
+    container_name: db
     restart: always
     ports:
       - "3306:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_USER=root
+      - MYSQL_ROOT_PASSWORD=pass-word
+      - MYSQL_USER=phpipam_user
       - MYSQL_PASSWORD=password
       - MYSQL_DATABASE=phpipam
     volumes:
       - mysql_data:/var/lib/mysql
+
   ipam:
     depends_on:
-      - mysql
-    image: pierrecdn/phpipam ##(phpipam/phpipam:latest)
+      - db
+    image: pierrecdn/phpipam
+    container_name: ipam
     ports:
       - "8080:80"
     environment:
-      - MYSQL_ENV_MYSQL_ROOT_PASSWORD=password
-      - MYSQL_ENV_MYSQL_USER=root
-      - MYSQL_ENV_MYSQL_HOST=mysql
+      - MYSQL_ENV_MYSQL_ROOT_PASSWORD=pass-word
+      - MYSQL_ENV_MYSQL_PASSWORD=password
+      - MYSQL_ENV_MYSQL_USER=phpipam_user
+      - MYSQL_ENV_MYSQL_HOST=db
       - MYSQL_ENV_MYSQL_DB=phpipam
     volumes:
       - ipam_data:/var/www/html
@@ -79,13 +82,8 @@ volumes:
   ipam_data:
     driver: local
 EOF
-cd /home/vagrant/nginx
+cd /home/vagrant/phpipam
 docker-compose up -d
 
-
-
-
-
-
-
+chown vagrant:vagrant -R /home/vagrant
 ip -br a
