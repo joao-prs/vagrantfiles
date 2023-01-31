@@ -15,6 +15,9 @@ cat <<EOF >>/etc/motd
 EOF
 #chmod -R 744 /etc/motd
 
+# exibe hora no historico
+echo 'export HISTTIMEFORMAT="%d/%m/%y %T "' >> ~/.bashrc
+
 
 apt update -y
 #apt upgrade -y
@@ -50,16 +53,17 @@ services:
   db:
     image: 'mysql:8.0'
     container_name: db
-    restart: always
     ports:
       - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=pass-word
+      - MYSQL_DATABASE=phpipam
       - MYSQL_USER=phpipam_user
       - MYSQL_PASSWORD=password
-      - MYSQL_DATABASE=phpipam
     volumes:
       - mysql_data:/var/lib/mysql
+    networks:
+      - ipamnet
 
   ipam:
     depends_on:
@@ -70,12 +74,18 @@ services:
       - "8080:80"
     environment:
       - MYSQL_ENV_MYSQL_ROOT_PASSWORD=pass-word
-      - MYSQL_ENV_MYSQL_PASSWORD=password
       - MYSQL_ENV_MYSQL_USER=phpipam_user
-      - MYSQL_ENV_MYSQL_HOST=db
+      - MYSQL_ENV_MYSQL_PASSWORD=password
       - MYSQL_ENV_MYSQL_DB=phpipam
+      - MYSQL_ENV_MYSQL_HOST=db
     volumes:
       - ipam_data:/var/www/html
+    networks:
+      - ipamnet
+
+networks:
+  ipamnet:
+    external: true
 volumes:
   mysql_data:
     driver: local

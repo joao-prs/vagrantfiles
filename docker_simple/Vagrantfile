@@ -16,6 +16,10 @@ Vagrant.configure("2") do |config|
       libvirt.default_prefix = ""
       #libvirt.nested = true
     end
+    config.vm.provision :ansible do |ansible|
+      ansible.playbook = "jota.yaml"
+      ansible.verbose = "vvv"
+    end
   end
 end
 

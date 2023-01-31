@@ -30,7 +30,7 @@
 
     - name: Removendo arquivo
       file:
-        path: "/home/vagrant/pasta_yamete/test03.txt"
+        path: /home/vagrant/test03.txt
         state: absent
 
     - name: Criando novo arquivo com permissoes
