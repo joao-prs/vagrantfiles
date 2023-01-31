@@ -15,12 +15,14 @@ cat <<EOF >>/etc/motd
 EOF
 #chmod -R 744 /etc/motd
 
-# exibe hora no historico
+# time historic
 echo 'export HISTTIMEFORMAT="%d/%m/%y %T "' >> ~/.bashrc
 
+# timezone
+timedatectl set-timezone America/Belem
 
 apt update -y
-#apt upgrade -y
+#apt upgrade -yc
 #apt dist-upgrade -y
 apt install -y docker.io docker-compose
 sudo systemctl enable docker
