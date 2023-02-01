@@ -28,6 +28,7 @@ apt install -y docker.io docker-compose
 sudo systemctl enable docker
 sudo systemctl start docker
 
+# permissao
 usermod -aG docker vagrant
 
 mkdir /home/vagrant/nginx
@@ -97,5 +98,30 @@ EOF
 cd /home/vagrant/phpipam
 docker-compose up -d
 
+
+mkdir -p /home/vagrant/grafana/volume
+cat <<EOF >>/home/vagrant/grafana/docker-compose.yaml
+version: '3.3'
+services:
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-mil-grau:/usr/share/grafana
+volumes:
+  grafana-mil-grau:
+    driver: local
+    driver_opts:
+      type: none
+      device: "/home/vagrant/grafana/volume"
+      o: bind
+EOF
+cd /home/vagrant/grafana
+docker-compose up -d
+
+
+# change own
 chown vagrant:vagrant -R /home/vagrant
 ip -br a
