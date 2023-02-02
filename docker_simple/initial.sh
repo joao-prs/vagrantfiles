@@ -103,7 +103,7 @@ services:
       - "3000:3000"
     volumes:
       - grafana-mil-grau:/usr/share/grafana
-volumes:
+volumes: 
   grafana-mil-grau:
     driver: local
     driver_opts:
