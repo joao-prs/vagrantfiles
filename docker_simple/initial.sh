@@ -31,7 +31,7 @@ sudo systemctl start docker
 # permissao
 usermod -aG docker vagrant
 
-mkdir /home/vagrant/nginx
+mkdir -p /home/vagrant/nginx/vol
 cat <<EOF >>/home/vagrant/nginx/docker-compose.yaml
 version: "3"
 services:
@@ -44,6 +44,8 @@ services:
     environment:
     - NGINX_HOST=foobar.com
     - NGINX_PORT=80
+    volumes:
+    - /home/vagrant/nginx/vol:/usr/share/nginx/html
 EOF
 cd /home/vagrant/nginx
 docker-compose up -d
