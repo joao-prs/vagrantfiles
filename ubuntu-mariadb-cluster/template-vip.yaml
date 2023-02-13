@@ -6,13 +6,14 @@ network:
   ethernets:
     eth0:
       addresses:
-        - 192.168.1.100/24
+        - 192.168.121.166/24
       gateway4: 192.168.1.1
       nameservers:
         addresses:
           - 8.8.8.8
           - 8.8.4.4
       dhcp4: no
+
   bonds:
     bond0:
       interfaces:
@@ -20,7 +21,7 @@ network:
         - eth1
       addresses:
         - 10.0.0.100/24
-        - 192.168.1.101/24
+        - 192.168.121.167/24
       gateway4: 10.0.0.1
       nameservers:
         addresses:
@@ -32,3 +33,6 @@ network:
       dhcp4: no
 
 #Na seção bonds, você pode especificar o nome da interface de agregação de link (neste caso, bond0). Em seguida, especifique as interfaces que farão parte da agregação (`eth0
+
+#comentar de 10 a 20 no vim     :10,20s/^/#/
+
