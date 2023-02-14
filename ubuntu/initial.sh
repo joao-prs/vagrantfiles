@@ -17,5 +17,12 @@ cat <<EOF >>/etc/motd
 ⣿⣦⡀⣿⣿⣷⣶⣬⣍⣛⣛⣛⡛⠿⠿⠿⠛⠛⢛⣛⣉⣭⣤⣂⢜⠕⢑⣡⣴⣿
 EOF
 
+# time historic
+echo 'export HISTTIMEFORMAT="%d/%m/%y %T "' >> ~/.bashrc
+
+# timezone
+timedatectl set-timezone America/Belem
+
+# 
 ip -br a
 
