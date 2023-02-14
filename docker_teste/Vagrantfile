@@ -31,8 +31,8 @@ Vagrant.configure("2") do |config|
       node.vm.provision "shell", path: "sh/vm_#{vm_name}.sh"
       
       node.vm.provision :ansible do |ansible|
-       ansible.playbook = "./yml/install.yaml"
-       ansible.verbose = "vvv"
+        ansible.playbook = "./yml/install.yaml"
+        ansible.verbose = "vvv"
       end
       ## ou rode 'vagrant provision --provision-with ansible'
       node.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/id_rsa.pub"

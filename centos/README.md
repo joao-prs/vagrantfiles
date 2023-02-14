@@ -1,3 +1,8 @@
+### install utils
+
+  dnf install dnsutils
+  dnf install bind-utils
+
 ### install libvirt
   sudo dnf --disablerepo '*' --enablerepo=extras swap centos-linux-repos centos-stream-repos
   sudo dnf distro-sync -y
