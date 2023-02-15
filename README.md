@@ -1,5 +1,5 @@
 # vagrantfiles
-Alguns arquivos vagrantfile para subir vms de diferentes tipos e configurações, entre na pasta desejada e digite 
+Alguns arquivos vagrantfile para subir vms de diferentes tipos e configurações, para a construção desses ambientes foi utilizado o virt-manager, então os arquivos vagrantfiles chamam pelo plugin do libvirt. Entre na pasta desejada e digite 
 ```
 vagrant up
 ```
