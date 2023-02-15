@@ -3,14 +3,14 @@
   become_user: root
   tasks:
 
-    - name: install updates using yum
-      yum:
+    - name: install updates using dnf
+      dnf:
         name: "*"
         state: latest
     
     - name: Criando novo directorio
       file:
-        path: /home/vagrant/ok_centos
+        path: /home/vagrant/ok-centos
         state: directory
 
 - hosts: vm2
@@ -23,5 +23,5 @@
     
     - name: Criando novo directorio
       file:
-        path: /home/vagrant/ok_ubuntu
+        path: /home/vagrant/ok-ubuntu
         state: directory
