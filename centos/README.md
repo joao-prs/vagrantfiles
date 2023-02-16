@@ -1,3 +1,10 @@
+## Status deste projeto
+- [ ] pronto
+- [ ] parado
+- [ ] erro
+- [x] inicio
+
+
 ### install utils
 
   dnf install dnsutils
