@@ -1,30 +1,29 @@
-## Status deste projeto
+### Status deste projeto
 - [ ] pronto
 - [ ] parado
 - [ ] erro
 - [x] inicio
-
 
 ### install utils
 
   dnf install dnsutils
   dnf install bind-utils
 
-### install libvirt
+## install libvirt
   sudo dnf --disablerepo '*' --enablerepo=extras swap centos-linux-repos centos-stream-repos
   sudo dnf distro-sync -y
 
   sudo -i
-  # Installing kvm
+  ### Installing kvm
   dnf module install virt
   dnf install virt-install virt-viewer libguestfs-tools
 
   systemctl enable libvirtd.service
   systemctl start libvirtd.service
   systemctl status libvirtd.service
-  # Verify your kvm installation
+  ### Verify your kvm installation
   lsmod | grep -i kvm
-  # Configure bridged networking
+  ### Configure bridged networking
   virsh net-info default
   nmcli device
   nmcli connection show

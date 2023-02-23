@@ -1,4 +1,4 @@
-## Status deste projeto
+### Status deste projeto
 - [ ] pronto
 - [ ] parado
 - [x] erro

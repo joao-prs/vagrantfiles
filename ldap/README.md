@@ -1,6 +1,6 @@
-## este projeto ainda está em construção
+### este projeto ainda está em construção
 
-## Status deste projeto
+### Status deste projeto
 - [ ] pronto
 - [ ] parado
 - [ ] erro
