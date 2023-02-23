@@ -10,10 +10,12 @@
   dnf install bind-utils
 
 ## install libvirt
-  sudo dnf --disablerepo '*' --enablerepo=extras swap centos-linux-repos centos-stream-repos
-  sudo dnf distro-sync -y
+```
+sudo dnf --disablerepo '*' --enablerepo=extras swap centos-linux-repos centos-stream-repos
+sudo dnf distro-sync -y
 
-  sudo -i
+sudo -i
+```
   ### Installing kvm
   dnf module install virt
   dnf install virt-install virt-viewer libguestfs-tools
