@@ -2,13 +2,23 @@ ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
 #ENV['LIBVIRT_DEFAULT_URI'] = 'qemu:///system'
 Vagrant.configure("2") do |config|
   
-  config.vm.define :ubuntuTest do |alm|
+  config.vm.define :almaVagrantTest do |alm|
+    # img
     alm.vm.box = "generic/alma9"
 
-    # ansible
+    # config ansible
     alm.vm.provision :ansible do |ansible|
       ansible.playbook = "ans.yaml"
       ansible.verbose = "vvv"
     end
 
+    # config provider
+    alm.vm.provider :libvirt do |libvirt|
+      libvirt.cpus = 2
+      libvirt.memory = 2048
+      libvirt.default_prefix = ""
+    end
+
+
+  end
 end

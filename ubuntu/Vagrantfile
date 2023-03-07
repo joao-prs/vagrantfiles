@@ -6,10 +6,14 @@ ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
 
 Vagrant.configure("2") do |config|
   config.vm.define :ubuntuTest do |ubt|
+    
+    # img
     ubt.vm.box = "generic/ubuntu2004"
     ubt.vm.hostname = "ubu"
     #ubt.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/id_rsa.pub"
     ubt.vm.provision "shell", path: "initial.sh"
+    
+    # provider
     ubt.vm.provider :libvirt do |libvirt|
       libvirt.cpus = 2
       libvirt.memory = 2048

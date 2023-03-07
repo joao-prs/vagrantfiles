@@ -7,18 +7,25 @@ ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
 
 Vagrant.configure("2") do |config|
   config.vm.define :ubuntuDocker do |doc|
+    
+    # config box & VM
     doc.vm.box = "generic/ubuntu2004"
     doc.vm.hostname = "docker"
     doc.vm.provision "shell", path: "initial.sh"
+
+    # config provider
     doc.vm.provider :libvirt do |libvirt|
       libvirt.cpus = 2
       libvirt.memory = 2048
       libvirt.default_prefix = ""
       #libvirt.nested = true
     end
+
+    # config ansible
     config.vm.provision :ansible do |ansible|
       ansible.playbook = "jota.yaml"
       ansible.verbose = "vvv"
     end
+
   end
 end

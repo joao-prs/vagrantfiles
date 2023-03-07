@@ -3,14 +3,21 @@ ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
 Vagrant.configure("2") do |config|
   
   config.vm.define :ubuntuTest do |cnt|
+    # img
     cnt.vm.box = "centos/8"
 
-    # ansible
-    cont.vm.provision :ansible do |ansible|
+    # config ansible
+    cnt.vm.provision :ansible do |ansible|
       ansible.playbook = "ans.yaml"
       ansible.verbose = "vvv"
     end
 
-    
+    # config provider
+    cnt.vm.provider :libvirt do |libvirt|
+      libvirt.cpus = 2
+      libvirt.memory = 2048
+      libvirt.default_prefix = ""
+    end
+
   end
 end
