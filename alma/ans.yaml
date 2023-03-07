@@ -1,0 +1,41 @@
+- hosts: all
+  become: true
+  become_user: root
+  tasks:
+
+    #- name: Update apt-get repo and cache
+    #  apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
+
+    - name: Criando arquivo com conteudo
+      copy:
+        dest: "/home/vagrant/yamete"
+        content: |
+          teste de texto na linha 1
+          yamete kudasai
+
+    - name: Criando novo directorio
+      file:
+        path: /home/vagrant/pasta_yamete
+        state: directory
+    
+    - name: Create multiple files
+      file: 
+        path: "{{ item }}"
+        state: touch
+      with_items:
+      - test01.txt
+      - test02.txt
+      - test03.txt
+      - test04.txt
+
+    - name: Removendo arquivo
+      file:
+        path: /home/vagrant/test03.txt
+        state: absent
+
+    - name: Criando novo arquivo com permissoes
+      file:
+        path: "/home/vagrant/permitido"
+        state: touch
+        mode: 0755
+        owner: vagrant
