@@ -7,7 +7,7 @@ Futuramente todas as pastas de pequenos labs vão ter páginas de readme com alg
 
 ### testados e atualizados
 
-| dir | ok? |
+| project | ok? |
 | --- | --- |
 | alma | ok |
 | centos | ok |
