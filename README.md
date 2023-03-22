@@ -13,7 +13,6 @@ Futuramente todas as pastas de pequenos labs vão ter páginas de readme com alg
 | centos | ok |
 | docker_simple | ok |
 | docker_teste | not ok |
-| greenbone | not ok |
 | lab_node3 | not ok |
 | ldap | not ok |
 | monitoring | ok |
