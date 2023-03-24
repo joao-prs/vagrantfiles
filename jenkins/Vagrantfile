@@ -1,0 +1,26 @@
+ # -*- mode: ruby -*-
+# vi: set ft=ruby :
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
+
+Vagrant.configure("2") do |config|
+  config.vm.define :Jenkins do |jenk|
+    
+    # img
+    jenk.vm.box = "generic/ubuntu2004"
+    jenk.vm.hostname = "jenkins"
+    #jenk.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/id_rsa.pub"
+    jenk.vm.provision "shell", path: "jenkins.sh"
+    # provider
+    jenk.vm.provider :libvirt do |libvirt|
+      # minimum hardware requirements: 2-3 threads / 256MB of RAM / 10GB drive space(docker container)
+      libvirt.cpus = 2
+      libvirt.memory = 2048
+      libvirt.default_prefix = ""
+    end
+  end
+end
+
+# change ubuntuTest
+# change ubt 
+# change ubu
+# change 
