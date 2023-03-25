@@ -9,20 +9,29 @@ Futuramente todas as pastas de pequenos labs vão ter páginas de readme com alg
 
 ### testados e atualizados
 
+| status | emoji |
+| --- | --- |
+| OK | ✅ |
+| NOT OK | ⚠️ |
+| OK? | ❓ |
+| ERROR | ⛔ |
+| LOADING | ✏️ |
+
+
 | project | ok? |
 | --- | --- |
-| alma | ok |
-| centos | ok |
-| docker_simple | ok |
-| docker_teste | not ok |
-| jenkins | ok |
-| lab_node3 | not ok |
-| ldap | not ok |
-| monitoring | ok |
-| oracle-database | not ok |
-| perola | ok |
-| rocky | ok |
-| ubuntu | ok |
-| ubuntu-graphic | ok? |
-| ubuntu-mariadb-cluster | ok |
-| windows | ok for virtualbox |
+| alma | ✅ |
+| centos | ✅ |
+| docker_simple | ✅ |
+| docker_teste | ⚠️ |
+| jenkins | ✅ |
+| lab_node3 | ⚠️ |
+| ldap | ⚠️ |
+| mariadb-cluster | ✅ |
+| monitoring | ✏️ |
+| oracle-database | ✏️ |
+| perola | ✅ |
+| rocky | ✅ |
+| ubuntu | ✅ |
+| ubuntu-graphic | ❓ |
+| windows | ✅ for virtualbox |
