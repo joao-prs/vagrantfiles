@@ -1,4 +1,4 @@
-![imagem](.asciiart/capa.jpg)
+![imagem](asciiart/capa.jpg)
 
 ## vagrantfiles
 Alguns arquivos vagrantfile para subir vms de diferentes tipos e configurações, para a construção desses ambientes foi utilizado o virt-manager, então os arquivos vagrantfiles chamam pelo plugin do libvirt. Entre na pasta desejada e digite 
