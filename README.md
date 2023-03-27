@@ -20,8 +20,8 @@ Futuramente todas as pastas de pequenos labs vão ter páginas de readme com alg
 
 | project | ok? |
 | --- | --- |
-| alma | ✅ |
-| centos | ✅ |
+| Alma Linux | ✅ |
+| CentOS | ✅ |
 | docker_simple | ✅ |
 | docker_teste | ⚠️ |
 | jenkins | ✅ |
@@ -29,9 +29,10 @@ Futuramente todas as pastas de pequenos labs vão ter páginas de readme com alg
 | ldap | ⚠️ |
 | mariadb-cluster | ✅ |
 | monitoring | ✏️ |
+| OpenSUSE | ✅ |
 | oracle-database | ✏️ |
 | perola | ✅ |
-| rocky | ✅ |
+| Rocky Linux | ✅ |
 | ubuntu | ✅ |
 | ubuntu-graphic | ❓ |
 | windows | ✅ for virtualbox |

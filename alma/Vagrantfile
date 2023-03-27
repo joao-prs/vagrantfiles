@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
   config.vm.define :almaVagrantTest do |alm|
     # img
     alm.vm.box = "generic/alma9"
-
+    alm.vm.hostname = "alma-linux"
     # config sh
     #alm.vm.provision "shell", path: "jenkins.sh"
 

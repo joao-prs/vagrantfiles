@@ -6,6 +6,7 @@ Vagrant.configure("2") do |config|
     
     # img
     rck.vm.box = "generic/rocky8"
+    rck.vm.hostname = "rocky"
 
     # config provider
     rck.vm.provider :libvirt do |libvirt|
