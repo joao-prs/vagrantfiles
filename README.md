@@ -9,6 +9,7 @@ Futuramente todas as pastas de pequenos labs vão ter páginas de readme com alg
 
 ### testados e atualizados
 
+
 | status | emoji |
 | --- | --- |
 | OK | ✅ |
