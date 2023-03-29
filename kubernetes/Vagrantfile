@@ -11,7 +11,7 @@ Vagrant.configure("2") do |config|
     ubt.vm.box = "generic/ubuntu2004"
     ubt.vm.hostname = "kubectl"
     #ubt.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/id_rsa.pub"
-    #ubt.vm.provision "shell", path: "initial.sh"
+    ubt.vm.provision "shell", path: "initial.sh"
     
     # provider
     ubt.vm.provider :libvirt do |libvirt|
