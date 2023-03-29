@@ -26,7 +26,7 @@ Futuramente todas as pastas de pequenos labs vão ter páginas de readme com alg
 | docker_simple | ✅ |
 | docker_teste | ⚠️ |
 | jenkins | ✅ |
-| kubernetes | ✏️ |
+| kubernetes | ✅ |
 | lab_node3 | ⚠️ |
 | ldap | ⚠️ |
 | mariadb-cluster | ✅ |
