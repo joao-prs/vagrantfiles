@@ -6,16 +6,12 @@ Fluxo de trabalho único para criar e gerenciar ambientes de máquinas virtuais.
 Uma piscina de arquivos vagrantfile para subir vms de diferentes tipos e configurações, para a construção desses ambientes foi utilizado o virt-manager, então os arquivos vagrantfiles chamam pelo plugin do libvirt no inicio de cada arquivo *Vagrantfile*. Entre na pasta desejada e digite `vagrant up`
 Futuramente todas as pastas de pequenos labs vão ter páginas de readme com algum comentário.
 
-
 #### Instalar o vagrant
 instale o `vagrant` em seu sistema
 
 e depois `vagrant plugin install vagrant-libvirt` para instalar o plugin
 
-
-
 #### testados e atualizados
-
 
 | status | emoji |
 | --- | --- |
