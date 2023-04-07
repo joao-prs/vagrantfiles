@@ -2,18 +2,24 @@ ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
 #ENV['LIBVIRT_DEFAULT_URI'] = 'qemu:///system'
 
 Vagrant.configure("2") do |config|
-  config.vm.define :rocky do |rck|
+  config.vm.define :rocky do |rocky|
     
-    # img
-    rck.vm.box = "generic/rocky8"
-    rck.vm.hostname = "rocky"
+    # box
+    rocky.vm.box = "generic/rocky8"
+    rocky.vm.hostname = "rocky"
+    
+    # read shell script
+    rocky.vm.provision "shell", path: "config.sh"
 
     # config provider
-    rck.vm.provider :libvirt do |libvirt|
-      libvirt.cpus = 2
-      libvirt.memory = 2048
+    rocky.vm.provider :libvirt do |libvirt|
+      libvirt.cpus = 1
+      libvirt.memory = 1024
       libvirt.default_prefix = ""
     end
 
   end
 end
+
+#sudo dnf install -y cockpit
+#sudo systemctl start cockpit.socket

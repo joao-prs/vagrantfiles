@@ -1,8 +1,6 @@
- # -*- mode: ruby -*-
+# -*- mode: ruby -*-
 # vi: set ft=ruby :
 ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
-#ENV['LIBVIRT_DEFAULT_URI'] = 'qemu:///session'
-#ENV['LIBVIRT_DEFAULT_URI'] = 'qemu:///system'
 
 Vagrant.configure("2") do |config|
   config.vm.define :ubuntuTest do |ubt|
@@ -10,7 +8,6 @@ Vagrant.configure("2") do |config|
     # img
     ubt.vm.box = "generic/ubuntu2004"
     ubt.vm.hostname = "ubu"
-    #ubt.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/id_rsa.pub"
     ubt.vm.provision "shell", path: "initial.sh"
     
     # provider
