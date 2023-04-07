@@ -13,31 +13,28 @@ e depois `vagrant plugin install vagrant-libvirt` para instalar o plugin
 
 #### testados e atualizados
 
-| status | emoji |
+| description | status emoji |
 | --- | --- |
-| OK | ✅ |
-| NOT OK | ⚠️ |
-| OK? | ❓ |
-| ERROR | ⛔ |
-| LOADING | ✏️ |
+| OK | 🟩|
+| OK? | 🟨 |
+| NOT OK | 🟥 |
+| LOADING | ⬜ |
 
 
 | project | ok? | description |
 | --- | --- | --- |
-| Alma Linux | ✅ |  |
-| CentOS | ✅ |  |
-| docker_simple | ✅ |  |
-| docker_teste | ⚠️ |  |
-| jenkins | ✅ |  |
-| kubernetes | ✅ |  |
-| lab_node3 | ⚠️ |  |
-| ldap | ⚠️ |  |
-| mariadb-cluster | ✅ | Database cluster using Galera with 3 machines |
-| monitoring | ✏️ |  |
-| OpenSUSE | ✅ |  |
-| oracle-database | ✏️ |  |
-| perola | ✅ |  |
-| Rocky Linux | ✅ | Rocky with configured cockpit |
-| ubuntu | ✅ |  |
-| ubuntu-graphic | ❓ |  |
-| windows | ✅ for virtualbox |  |
+| Alma Linux | 🟩 |  |
+| CentOS | 🟩 |  |
+| docker_simple | 🟩 | docker with configured nginx |
+| docker_teste | 🟥 |  |
+| jenkins | 🟩 | Jenkins for tests |
+| kubernetes | 🟩 |  |
+| lab_node3 | 🟥 |  |
+| mariadb-cluster | 🟩 | Database cluster using Galera with 3 machines |
+| monitoring | ⬜ |  |
+| OpenSUSE | 🟩 |  |
+| oracle-database | ⬜ |  |
+| perola | 🟩 |  |
+| Rocky Linux | 🟩 | Rocky with configured cockpit |
+| ubuntu | 🟩 |  |
+| windows | 🟩 for virtualbox |  |
