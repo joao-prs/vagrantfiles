@@ -22,22 +22,22 @@ e depois `vagrant plugin install vagrant-libvirt` para instalar o plugin
 | LOADING | ✏️ |
 
 
-| project | ok? |
-| --- | --- |
-| Alma Linux | ✅ |
-| CentOS | ✅ |
-| docker_simple | ✅ |
-| docker_teste | ⚠️ |
-| jenkins | ✅ |
-| kubernetes | ✅ |
-| lab_node3 | ⚠️ |
-| ldap | ⚠️ |
-| mariadb-cluster | ✅ |
-| monitoring | ✏️ |
-| OpenSUSE | ✅ |
-| oracle-database | ✏️ |
-| perola | ✅ |
-| Rocky Linux | ✅ |
-| ubuntu | ✅ |
-| ubuntu-graphic | ❓ |
-| windows | ✅ for virtualbox |
+| project | ok? | description |
+| --- | --- | --- |
+| Alma Linux | ✅ |  |
+| CentOS | ✅ |  |
+| docker_simple | ✅ |  |
+| docker_teste | ⚠️ |  |
+| jenkins | ✅ |  |
+| kubernetes | ✅ |  |
+| lab_node3 | ⚠️ |  |
+| ldap | ⚠️ |  |
+| mariadb-cluster | ✅ | Database cluster using Galera with 3 machines |
+| monitoring | ✏️ |  |
+| OpenSUSE | ✅ |  |
+| oracle-database | ✏️ |  |
+| perola | ✅ |  |
+| Rocky Linux | ✅ | Rocky with configured cockpit |
+| ubuntu | ✅ |  |
+| ubuntu-graphic | ❓ |  |
+| windows | ✅ for virtualbox |  |
