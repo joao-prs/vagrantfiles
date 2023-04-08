@@ -8,19 +8,6 @@ cat << EOF >> /etc/motd
 #################
 EOF
 
-#apt update
-
-# change ssh welcome
-#apt install -y neofetch
-cat << EOF >> /home/vagrant/.bashrc
-
-# MY CUSTOM CONFIGURATION *joao-prs*
-# you can remove it
-neofetch
-export HISTTIMEFORMAT="%d/%m/%y %T "
-EOF
-
-
 
 # predefined keys for automatic initial communication. (not secure method)
 cat <<EOF > /home/vagrant/.ssh/id_ed25519
@@ -39,15 +26,47 @@ cat <<EOF > /home/vagrant/.ssh/id_ed25519.pub
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGvvddbsrJ7hx9egJroubNeOrqy5RLHHGvPfAi5azhCr vagrant@ubuntu2204.localdomain
 EOF
 
-
-
+# test
 cat <<EOF > /home/vagrant/file_teste
-aplksdfnjkpalsdjfnpasodknfjpKLWNFDPALKSNDFPKLN KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
-a mae do david
+file sharing test
 EOF
 
 # change permissions
 chown vagrant:vagrant -R /home/vagrant
 
-
 su vagrant -c "scp -o StrictHostKeyChecking=no /home/vagrant/file_teste vagrant@10.8.0.103:~/"
+
+
+
+
+
+
+
+
+
+
+
+# update for installations
+apt update
+
+# change ssh welcome
+apt install -y neofetch
+cat << EOF >> /home/vagrant/.bashrc
+
+# MY CUSTOM CONFIGURATION *joao-prs*
+# you can remove it
+neofetch
+export HISTTIMEFORMAT="%d/%m/%y %T "
+EOF
+
+# installation finally
+apt install -y docker.io
+
+# capture token
+su vagrant -c "sudo docker swarm init --advertise-addr 10.8.0.101 | tail -n +5 | head -n 1 | cut -c5- > tokenfile"
+
+# share token
+su vagrant -c "scp -o StrictHostKeyChecking=no /home/vagrant/tokenfile vagrant@10.8.0.103:~/"
+su vagrant -c "scp -o StrictHostKeyChecking=no /home/vagrant/tokenfile vagrant@10.8.0.102:~/"
+
+
