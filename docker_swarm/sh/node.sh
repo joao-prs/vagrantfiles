@@ -8,7 +8,7 @@ cat << EOF >> /etc/motd
 #################
 EOF
 
-
+ 
 # predefined keys for automatic initial communication. (not secure method)
 cat <<EOF >>  /home/vagrant/.ssh/authorized_keys
 
@@ -50,4 +50,6 @@ do
 done
 
 
-
+chmod 764 /home/vagrant/tokenfile
+chown vagrant:vagrant -R /home/vagrant
+su vagrant -c "cd && sudo ./tokenfile"

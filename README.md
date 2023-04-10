@@ -26,14 +26,12 @@ e depois `vagrant plugin install vagrant-libvirt` para instalar o plugin
 | Alma Linux | 🟩 |  |
 | CentOS | 🟩 |  |
 | docker_simple | 🟩 | docker with configured nginx |
-| docker_teste | 🟥 |  |
+| docker_swarm | 🟩 | docker with swarm tests |
 | jenkins | 🟩 | Jenkins for tests |
 | kubernetes | 🟩 |  |
-| lab_node3 | 🟥 |  |
 | mariadb-cluster | 🟩 | Database cluster using Galera with 3 machines |
 | monitoring | ⬜ |  |
 | OpenSUSE | 🟩 |  |
-| oracle-database | ⬜ |  |
 | perola | 🟩 |  |
 | Rocky Linux | 🟩 | Rocky with configured cockpit |
 | ubuntu | 🟩 |  |
