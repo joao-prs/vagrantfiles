@@ -1,26 +1,37 @@
- # -*- mode: ruby -*-
+# -*- mode: ruby -*-
 # vi: set ft=ruby :
-ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
 
 Vagrant.configure("2") do |config|
-  config.vm.define :Jenkins do |jenk|
-    
-    # img
-    jenk.vm.box = "generic/ubuntu2004"
-    jenk.vm.hostname = "jenkins"
-    #jenk.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/id_rsa.pub"
-    jenk.vm.provision "shell", path: "jenkins.sh"
-    # provider
-    jenk.vm.provider :libvirt do |libvirt|
-      # minimum hardware requirements: 2-3 threads / 256MB of RAM / 10GB drive space(docker container)
-      libvirt.cpus = 2
-      libvirt.memory = 2048
-      libvirt.default_prefix = ""
+
+  config.ssh.insert_key = false
+  config.ssh.private_key_path = ["~/.ssh/id_rsa", "~/.vagrant.d/insecure_private_key"]
+  config.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/authorized_keys"
+  config.vm.provision "file", source: "~/.ssh/id_rsa", destination: "~/.ssh/id_rsa"
+  config.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/id_rsa.pub"
+
+  # Jenkins Server
+  config.vm.define "jenkins", primary: true do |jenkins|
+    jenkins.vm.box = "generic/ubuntu2004"
+    jenkins.vm.hostname = "jenkins"
+    jenkins.vm.network "private_network", ip: "192.168.121.10"
+    jenkins.vm.provider :libvirt do |domain|
+      domain.default_prefix = ""
+      domain.cpus = "2"
+      domain.memory = "2048"
     end
+    jenkins.vm.provision "shell", path: "jenkins.sh"
+  end
+
+  # Desenvolvimento e Homologação com docker e produção com k8s(microk8s)
+  config.vm.define "server", primary: true do |server|
+    server.vm.box = "generic/ubuntu2004"
+    server.vm.hostname = "server"
+    server.vm.network "private_network", ip: "192.168.121.11"
+    server.vm.provider :libvirt do |domain|
+      domain.default_prefix = ""
+      domain.cpus = "4"
+      domain.memory = "4096"
+    end
+    server.vm.provision "shell", path: "k8s.sh"
   end
 end
-
-# change ubuntuTest
-# change ubt 
-# change ubu
-# change 
