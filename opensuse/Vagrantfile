@@ -4,10 +4,10 @@ Vagrant.configure("2") do |config|
   
   config.vm.define :OpenSUSE do |opensuse|
     # img
-    opensuse.vm.box = "generic/opensuse42"
+    opensuse.vm.box = "generic/opensuse15"
     opensuse.vm.hostname = "su"
     # config sh
-    #opensuse.vm.provision "shell", path: "jenkins.sh"
+    #opensuse.vm.provision "shell", path: "opensuse.sh"
 
     # config provider
     opensuse.vm.provider :libvirt do |libvirt|
