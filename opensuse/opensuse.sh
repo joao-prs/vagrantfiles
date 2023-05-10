@@ -1,5 +1,7 @@
-# sudo zypper ar http://download.opensuse.org/repositories/utilities/openSUSE_Leap_15.4/ Utilities
-# sudo zypper in neofetch
+sudo zypper update -y
+sudo zypper ar http://download.opensuse.org/repositories/utilities/openSUSE_Leap_15.4/ Utilities
+sudo zypper in -y neofetch
+neofetch
 
 # zypper repos --uri
 
