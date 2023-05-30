@@ -28,3 +28,5 @@ mysql -e "create user glpi@'%' identified by 'glpi';"
 mysql -e "grant all privileges on glpi.* to glpi@'%';"
 mysql -e "revoke all privileges on glpi.* from glpi@'%';"
 mysql -e "flush privileges;"
+
+systemctl restart mariadb
