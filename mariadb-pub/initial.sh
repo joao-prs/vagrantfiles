@@ -23,7 +23,9 @@ apt install -y mariadb-server
 
 
 mysql -e "create database glpi;"
-mysql -e "create user glpi@'%' identified by 'glpi'; grant all privileges on glpi.* to glpi@'%'; revoke all privileges on glpi.* from glpi@'%'; flush privileges;"
+mysql -e "create user glpi@'%' identified by 'glpi'; grant all privileges on glpi.* to glpi@'%'; flush privileges;"
+
+mysql -e "grant all privileges on glpi.* to glpi@'%';"
 
 crudini --set /etc/mysql/mariadb.conf.d/50-server.cnf mysqld bind-address 0.0.0.0
 
