@@ -18,7 +18,7 @@ timedatectl set-timezone America/Belem
 ip -br a
 
 apt update
-apt install -y crudini
+apt install -y crudini-u
 apt install -y mariadb-server
 
 
