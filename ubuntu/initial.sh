@@ -19,11 +19,10 @@ EOF
 
 # time historic
 echo 'export HISTTIMEFORMAT="%d/%m/%y %T "' >> ~/.bashrc
-
 # timezone
 timedatectl set-timezone America/Belem
 
-# 
+# show ip when finish the process
 ip -br a
 
 ############################
@@ -35,18 +34,13 @@ ip -br a
 useradd -m ansible
 usermod -aG sudo ansible
 chsh -s /bin/bash ansible
-#passwd -l ansible
 passwd -d ansible 
 chown ansible:ansible /var/lib/apt/lists/lock
 mkdir /home/ansible/.ssh/
-cp /home/vagrant/.ssh/authorized_keys /home/ansible/.ssh/
-
+cp /home/ubuntu/.ssh/authorized_keys /home/ansible/.ssh/
 chown -R ansible:ansible /home/ansible/.ssh
 chmod 700 /home/ansible/.ssh
 chmod 600 /home/ansible/.ssh/authorized_keys
-
-
-
 
 
 ######################### add pub.key (step not secure)
