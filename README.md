@@ -7,7 +7,7 @@ Uma piscina de arquivos vagrantfile para subir vms de diferentes tipos e configu
 Futuramente todas as pastas de pequenos labs vão ter páginas de readme com algum comentário.
 
 ### Instalar o vagrant
-instale o `vagrant` em seu sistema
+instale o `vagrant` em seu sistema de preferencia
 
 e depois `vagrant plugin install vagrant-libvirt` para instalar o plugin
 
