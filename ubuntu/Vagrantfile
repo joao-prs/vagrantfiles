@@ -19,9 +19,3 @@ Vagrant.configure("2") do |config|
   end
 end
 
-# vagrantfile
-# ├── vagrant
-# │   ├── id_rsa.pub
-# │   └── netplan config
-# └── vagrant
-
