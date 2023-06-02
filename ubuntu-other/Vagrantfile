@@ -3,11 +3,11 @@
 ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
 
 Vagrant.configure("2") do |config|
-  config.vm.define :ubuntuTest22 do |ubt|
+  config.vm.define :ubuntuAnotherTest do |ubt|
     
     # img
     ubt.vm.box = "generic/ubuntu2204"
-    ubt.vm.hostname = "ubu"
+    ubt.vm.hostname = "ubuntu-other"
     ubt.vm.provision "shell", path: "initial.sh"
     
     # provider
