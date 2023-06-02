@@ -45,3 +45,21 @@ chmod 600 /home/ansible/.ssh/authorized_keys
 
 # show ip when finish the process
 ip -br a
+
+
+
+
+hostnamectl set-hostname ldap.seasolutions.com
+echo "$(hostname -I)ldap.seasolutions.com.br" >> /etc/hosts
+
+sudo apt update
+
+sudo apt -y install slapd ldap-utils
+
+sudo slapcat 
+
+vim basedn.ldif
+
+
+
+#https://computingforgeeks.com/install-and-configure-openldap-phpldapadmin-on-ubuntu/
