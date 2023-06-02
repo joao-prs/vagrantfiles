@@ -1,11 +1,11 @@
 #!/bin/sh
 chmod -R 777 /etc/motd
 cat <<EOF >>/etc/motd
-####
-#
-# db
-#
-####
+############################
+#                          #
+#    servidor de bancos    #
+#                          #
+############################
 EOF
 
 # time historic
