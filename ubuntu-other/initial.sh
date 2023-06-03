@@ -52,14 +52,27 @@ ip -br a
 hostnamectl set-hostname ldap.seasolutions.com
 echo "$(hostname -I)ldap.seasolutions.com.br" >> /etc/hosts
 
-sudo apt update
-
-sudo apt -y install slapd ldap-utils
-
-sudo slapcat 
-
-vim basedn.ldif
+# sudo apt update
+# 
+# sudo apt -y install slapd ldap-utils
+# 
+# sudo slapcat 
+# 
+# vim basedn.ldif
 
 
 
 #https://computingforgeeks.com/install-and-configure-openldap-phpldapadmin-on-ubuntu/
+# /usr/share/phpldapadmin                 # change lib and htdocs
+#sudo vim /etc/php/8.1/apache2/php.ini    # memory_limit = 128M (aumentar a memoria)
+
+#sudo vim /etc/phpldapadmin/config.php
+#  $servers->setValue('server','name','servidor LDAP');
+#  $servers->setValue('server','host','192.168.121.154');
+#  $servers->setValue('server','base',array('dc=seasolutions,dc=com'));
+#  $servers->setValue('login','bind_id','cn=admin,dc=seasolutions,dc=com');
+#  $config->custom->appearance['hide_template_warning'] = true;
+
+
+
+
