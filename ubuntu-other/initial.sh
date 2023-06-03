@@ -48,10 +48,15 @@ ip -br a
 
 
 
+############################
+#                          #
+#    instalacao do ldap    #
+#                          #
+############################
 
-hostnamectl set-hostname ldap.seasolutions.com
-echo "$(hostname -I)ldap.seasolutions.com.br" >> /etc/hosts
-
+#hostnamectl set-hostname ldap.seasolutions.com
+#echo "$(hostname -I)ldap.seasolutions.com.br" >> /etc/hosts
+#
 # sudo apt update
 # 
 # sudo apt -y install slapd ldap-utils
@@ -59,8 +64,6 @@ echo "$(hostname -I)ldap.seasolutions.com.br" >> /etc/hosts
 # sudo slapcat 
 # 
 # vim basedn.ldif
-
-
 
 #https://computingforgeeks.com/install-and-configure-openldap-phpldapadmin-on-ubuntu/
 # /usr/share/phpldapadmin                 # change lib and htdocs
