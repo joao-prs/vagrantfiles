@@ -53,6 +53,7 @@ ip -br a
 #    instalacao do ldap    #
 #                          #
 ############################
+#https://computingforgeeks.com/install-and-configure-openldap-phpldapadmin-on-ubuntu/
 
 #hostnamectl set-hostname ldap.seasolutions.com
 #echo "$(hostname -I)ldap.seasolutions.com.br" >> /etc/hosts
@@ -65,7 +66,6 @@ ip -br a
 # 
 # vim basedn.ldif
 
-#https://computingforgeeks.com/install-and-configure-openldap-phpldapadmin-on-ubuntu/
 # /usr/share/phpldapadmin                 # change lib and htdocs
 #sudo vim /etc/php/8.1/apache2/php.ini    # memory_limit = 128M (aumentar a memoria)
 
@@ -77,5 +77,4 @@ ip -br a
 #  $config->custom->appearance['hide_template_warning'] = true;
 
 
-
-
+#https://blog.4linux.com.br/freeipa-server/
