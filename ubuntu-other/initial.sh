@@ -48,16 +48,16 @@ ip -br a
 
 
 
+
 ############################
 #                          #
-#    instalacao do ldap    #
+#    criar phpldapadmin    #
 #                          #
 ############################
-#https://computingforgeeks.com/install-and-configure-openldap-phpldapadmin-on-ubuntu/
 
 #hostnamectl set-hostname ldap.seasolutions.com
 #echo "$(hostname -I)ldap.seasolutions.com.br" >> /etc/hosts
-#
+
 # sudo apt update
 # 
 # sudo apt -y install slapd ldap-utils
@@ -66,15 +66,45 @@ ip -br a
 # 
 # vim basedn.ldif
 
+#https://computingforgeeks.com/install-and-configure-openldap-phpldapadmin-on-ubuntu/
 # /usr/share/phpldapadmin                 # change lib and htdocs
-#sudo vim /etc/php/8.1/apache2/php.ini    # memory_limit = 128M (aumentar a memoria)
+#sudo vim /etc/php/8.1/apache2/php.ini    # 128MB
 
-#sudo vim /etc/phpldapadmin/config.php
-#  $servers->setValue('server','name','servidor LDAP');
-#  $servers->setValue('server','host','192.168.121.154');
-#  $servers->setValue('server','base',array('dc=seasolutions,dc=com'));
-#  $servers->setValue('login','bind_id','cn=admin,dc=seasolutions,dc=com');
-#  $config->custom->appearance['hide_template_warning'] = true;
+# /etc/
+#   $servers->setValue('server','name','servidor LDAP');
+#   $servers->setValue('server','host','192.168.121.154');
+#   $servers->setValue('login','bind_id','cn=admin,dc=seasolutions,dc=com');
+#   $config->custom->appearance['hide_template_warning'] = true;
+#sudo systemctl restart slapd
 
 
-#https://blog.4linux.com.br/freeipa-server/
+
+
+############################
+#                          #
+#     install freeipa      # not running
+#                          #
+############################
+
+#sudo hostnamectl set-hostname ipa.seasolutions.com.br
+#echo "$(hostname -I)ldap.seasolutions.com.br" >> /etc/hosts
+#sudo apt -y update
+##sudo apt -y upgrade
+##reboot
+#apt -y install rng-tools
+#sudo vim /etc/default/rng-tools
+#   HRNGDEVICE=/dev/urandom
+#systemctl enable rng-tools
+#systemctl start rng-tools
+#apt -y install freeipa-server
+#apt -y install freeipa-client-epn
+
+
+
+
+
+
+
+
+
+

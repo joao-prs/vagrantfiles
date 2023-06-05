@@ -1,0 +1,20 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
+
+Vagrant.configure("2") do |config|
+  config.vm.define :oracle8 do |oraclelinux|
+
+    # img
+    oraclelinux.vm.box = "generic/oracle8"
+    oraclelinux.vm.hostname = "oracle-teste"
+    #oraclelinux.vm.provision "shell", path: "initial.sh"
+
+    # provider
+    oraclelinux.vm.provider :libvirt do |libvirt|
+      libvirt.cpus = 2
+      libvirt.memory = 2048
+      libvirt.default_prefix = ""
+    end
+  end
+end

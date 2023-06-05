@@ -12,3 +12,24 @@ cat <<EOF>> /home/vagrant/.bashrc
 # you can remove it
 neofetch
 EOF
+
+
+
+
+
+
+
+
+############################
+#                          #
+#     install freeipa      #
+#                          #
+############################
+
+#echo "$(hostname -I)ldap.seasolutions.com.br" >> /etc/hosts
+#
+#firewall-cmd --add-service=freeipa-ldap --add-service=freeipa-ldaps
+#firewall-cmd --add-service=freeipa-ldap --add-service=freeipa-ldaps --permanent
+##dnf update ?
+#dnf install freeipa-server
+
