@@ -53,6 +53,7 @@ ip -br a
 #                          #
 #    criar phpldapadmin    #
 #                          #
+#https://computingforgeeks.com/install-and-configure-openldap-phpldapadmin-on-ubuntu/ # tutorial
 ############################
 
 #hostnamectl set-hostname ldap.seasolutions.com
@@ -65,12 +66,27 @@ ip -br a
 # sudo slapcat 
 # 
 # vim basedn.ldif
+#   dn: ou=people,dc=seasolutions,dc=com
+#   objectClass: organizationalUnit
+#   ou: people
+#   
+#   dn: ou=groups,dc=seasolutions,dc=com
+#   objectClass: organizationalUnit
+#   ou: groups
 
-#https://computingforgeeks.com/install-and-configure-openldap-phpldapadmin-on-ubuntu/
+#sudo ldapadd -x -D cn=admin,dc=seasolutions,dc=com -W -f basedn.ldif
+#apt -y install apache2 php php-cgi libapache2-mod-php php-mbstring php-common php-pear
+
+#sudo a2enconf php*-cgi
+#sudo systemctl reload apache2
+
+
+#apt -y install phpldapadmin
+
 # /usr/share/phpldapadmin                 # change lib and htdocs
 #sudo vim /etc/php/8.1/apache2/php.ini    # 128MB
 
-# /etc/
+# /usr/share/phpldapadmin/config/config.php
 #   $servers->setValue('server','name','servidor LDAP');
 #   $servers->setValue('server','host','192.168.121.154');
 #   $servers->setValue('login','bind_id','cn=admin,dc=seasolutions,dc=com');
