@@ -53,8 +53,8 @@ ip -br a
 #                          #
 #    criar phpldapadmin    #
 #                          #
-#https://computingforgeeks.com/install-and-configure-openldap-phpldapadmin-on-ubuntu/ # tutorial
 ############################
+#https://computingforgeeks.com/install-and-configure-openldap-phpldapadmin-on-ubuntu/ # tutorial
 
 #hostnamectl set-hostname ldap.seasolutions.com
 #echo "$(hostname -I)ldap.seasolutions.com.br" >> /etc/hosts
@@ -65,6 +65,7 @@ ip -br a
 # 
 # sudo slapcat 
 # 
+# ## acho que essa parte da para pular
 # vim basedn.ldif
 #   dn: ou=people,dc=seasolutions,dc=com
 #   objectClass: organizationalUnit
@@ -89,11 +90,12 @@ ip -br a
 # /usr/share/phpldapadmin/config/config.php
 #   $servers->setValue('server','name','servidor LDAP');
 #   $servers->setValue('server','host','192.168.121.154');
+#   $servers->setValue('server','base',array('dc=seasolutions,dc=com'));
 #   $servers->setValue('login','bind_id','cn=admin,dc=seasolutions,dc=com');
 #   $config->custom->appearance['hide_template_warning'] = true;
 #sudo systemctl restart slapd
 
-
+# acesse: ip/phpldapadmin/
 
 
 ############################
