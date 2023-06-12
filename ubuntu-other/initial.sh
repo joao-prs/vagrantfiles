@@ -67,21 +67,20 @@ ip -br a
 # 
 # ## acho que essa parte da para pular
 # vim basedn.ldif
-#   dn: ou=people,dc=seasolutions,dc=com
-#   objectClass: organizationalUnit
-#   ou: people
-#   
-#   dn: ou=groups,dc=seasolutions,dc=com
-#   objectClass: organizationalUnit
-#   ou: groups
+#dn: ou=people,dc=seasolutions,dc=com
+#objectClass: organizationalUnit
+#ou: people
+#
+#dn: ou=groups,dc=seasolutions,dc=com
+#objectClass: organizationalUnit
+#ou: groups
 
 #sudo ldapadd -x -D cn=admin,dc=seasolutions,dc=com -W -f basedn.ldif
+
 #apt -y install apache2 php php-cgi libapache2-mod-php php-mbstring php-common php-pear
 
 #sudo a2enconf php*-cgi
 #sudo systemctl reload apache2
-
-
 #apt -y install phpldapadmin
 
 # /usr/share/phpldapadmin                 # change lib and htdocs
