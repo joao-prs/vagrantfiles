@@ -86,12 +86,6 @@ scp ../lib-20230603T120936Z-001.zip vagrant@192.168.121.152:~/
 
 
 
-
-
-
-
-
-
 dn: dc=seasolutions,dc=com
 objectClass: top
 objectClass: dcObject
