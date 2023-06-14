@@ -27,7 +27,7 @@ ou: groups
 
 ldapadd -x -D cn=admin,dc=seasolutions,dc=com -W -f basedn.ldif
 
-apt -y install apache2 php php-cgi libapache2-mod-php php-mbstring php-common php-pear
+apt -y install apache2 php php-cgi libapache2-mod-php php-mbstring php-common php-pear zip
 
 sudo a2enconf php*-cgi
 sudo systemctl reload apache2
