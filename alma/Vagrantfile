@@ -2,7 +2,7 @@ ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
 #ENV['LIBVIRT_DEFAULT_URI'] = 'qemu:///system'
 Vagrant.configure("2") do |config|
   
-  config.vm.define :almaVagrantTest do |alm|
+  config.vm.define :almaLinux do |alm|
     # img
     alm.vm.box = "generic/alma9"
     alm.vm.hostname = "alma-linux"

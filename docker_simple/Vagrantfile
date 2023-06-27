@@ -6,7 +6,7 @@ ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
 #ENV['LIBVIRT_DEFAULT_URI'] = 'qemu:///system'
 
 Vagrant.configure("2") do |config|
-  config.vm.define :ubuntuDocker do |doc|
+  config.vm.define :DockerSimple do |doc|
     
     # config box & VM
     doc.vm.box = "generic/ubuntu2004"
