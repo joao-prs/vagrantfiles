@@ -36,20 +36,20 @@ export HISTTIMEFORMAT="%d/%m/%y %T "
 EOF
 
 # installation finally
-apt install -y docker.io
+apt install -y docker.io docker-compose
 
 
 # check if the file exists
 sleep 5
-while [ ! -f /home/vagrant/tokenfile ]
+while [ ! -f /home/vagrant/tokenfile.sh ]
 do
-    chmod 764 /home/vagrant/tokenfile
+    chmod 764 /home/vagrant/tokenfile.sh
     chown vagrant:vagrant -R /home/vagrant
-    su vagrant -c "cd && sudo ./tokenfile"
+    su vagrant -c "cd && bash tokenfile.sh"
     sleep 5
 done
 
 
-chmod 764 /home/vagrant/tokenfile
+chmod 764 /home/vagrant/tokenfile.sh
 chown vagrant:vagrant -R /home/vagrant
-su vagrant -c "cd && sudo ./tokenfile"
+su vagrant -c "cd && bash tokenfile.sh"

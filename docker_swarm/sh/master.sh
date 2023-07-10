@@ -60,13 +60,19 @@ export HISTTIMEFORMAT="%d/%m/%y %T "
 EOF
 
 # installation finally
-apt install -y docker.io
+apt install -y docker.io docker-compose
+
+# create tokenfile.sh
+cat << EOF > /home/vagrant/tokenfile.sh
+#!/bin/bash
+EOF
+chown vagrant:vagrant /home/vagrant/tokenfile.sh
 
 # capture token
-su vagrant -c "sudo docker swarm init --advertise-addr 10.8.0.101 | tail -n +5 | head -n 1 | cut -c5- > tokenfile"
+su vagrant -c "sudo docker swarm init --advertise-addr 10.8.0.101 | tail -n +5 | head -n 1 | cut -c5- >> tokenfile.sh"
 
 # share token
-su vagrant -c "scp -o StrictHostKeyChecking=no /home/vagrant/tokenfile vagrant@10.8.0.103:~/"
-su vagrant -c "scp -o StrictHostKeyChecking=no /home/vagrant/tokenfile vagrant@10.8.0.102:~/"
+su vagrant -c "scp -o StrictHostKeyChecking=no /home/vagrant/tokenfile.sh vagrant@10.8.0.103:~/"
+su vagrant -c "scp -o StrictHostKeyChecking=no /home/vagrant/tokenfile.sh vagrant@10.8.0.102:~/"
 
 
