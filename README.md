@@ -29,11 +29,8 @@ e depois `vagrant plugin install vagrant-libvirt` para instalar o plugin
 | docker_simple | 🟩 | docker with configured nginx |
 | docker_swarm | 🟩 | docker with swarm tests |
 | jenkins | 🟩 | Jenkins for tests |
-| kubernetes | 🟩 | loading... |
 | mariadb-cluster | 🟩 | Database cluster using Galera with 3 machines |
-| monitoring | ⬜ | loading... |
-| OpenSUSE | 🟩 | loading... |
-| perola | 🟩 | loading... |
 | Rocky Linux | 🟩 | Rocky with configured cockpit |
 | ubuntu | 🟩 | ubuntu simple image |
+| ubuntu-02 | 🟩 | future customizations |
 | windows | 🟩 | for virtualbox |
