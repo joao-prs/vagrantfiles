@@ -22,6 +22,7 @@ echo 'export HISTTIMEFORMAT="%d/%m/%y %T "' >> ~/.bashrc
 # timezone
 timedatectl set-timezone America/Belem
 
+
 ############################
 #                          #
 #    criação do usuario    #
