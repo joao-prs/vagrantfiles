@@ -32,7 +32,7 @@ useradd -m ansible
 usermod -aG sudo ansible
 chsh -s /bin/bash ansible
 passwd -d ansible 
-mkdir /home/ansible/.ssh
+mkdir -p /home/ansible/.ssh
 cp /home/vagrant/.ssh/authorized_keys /home/ansible/.ssh/
 chown -R ansible:ansible /home/ansible/.ssh
 chmod 700 /home/ansible/.ssh
