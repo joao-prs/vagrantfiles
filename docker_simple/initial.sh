@@ -22,7 +22,7 @@ echo 'export HISTTIMEFORMAT="%d/%m/%y %T "' >> ~/.bashrc
 timedatectl set-timezone America/Belem
 
 apt update -y
-#apt upgrade -yc
+#apt upgrade -y
 #apt dist-upgrade -y
 apt install -y docker.io docker-compose
 sudo systemctl enable docker
