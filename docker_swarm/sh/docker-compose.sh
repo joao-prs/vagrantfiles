@@ -112,3 +112,30 @@ cd /home/vagrant/grafana
 docker stack deploy --compose-file docker-compose.yaml grafana
 
 ###############################################################
+
+
+version: "3.4"
+services:
+  bookstack:
+    #image: solidnerd/bookstack:latest
+    image: solidnerd/bookstack:22.10.2
+    environment:
+      APP_URL: http://10.0.0.10
+      DB_DATABASE: bookstack
+      DB_HOST: 10.0.0.20 # your db server
+      DB_PASSWORD: sTr0ng_PAsS0wRd_Db
+      DB_USERNAME: bookstack
+      MAIL_DRIVER: smtp
+      MAIL_ENCRYPTION: ssl
+      MAIL_FROM: mail@mail.com.br
+      MAIL_HOST: email-ssl.com.br
+      MAIL_PASSWORD: sTr0ng_PAsS0wRd
+      MAIL_PORT: 465
+      MAIL_USERNAME: mail@mail.com.br
+      PGID: 1000
+      PUID: 1000
+      PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    ports:
+      - 9033:8080
+
+###############################################################
