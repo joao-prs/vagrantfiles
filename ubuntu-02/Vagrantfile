@@ -3,7 +3,7 @@
 ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
 
 Vagrant.configure("2") do |config|
-  config.vm.define :ubuntuAnotherTest do |ubt|
+  config.vm.define :ubuntu-02 do |ubt|
     
     # img
     ubt.vm.box = "generic/ubuntu2204"
