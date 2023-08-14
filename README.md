@@ -65,15 +65,19 @@ e depois `vagrant plugin install vagrant-libvirt` para instalar o plugin
 
 ### 🟦 testados e atualizados
 
+> Este repositório está sendo constantemente atualizado, futuramente cada projeto terá uma aplicação diferente dentro de sí, visando o aprendizado de sua instalação dentro do script de automação de diferentes ambientes.
+
+<!--
 | description | status emoji |
 | --- | --- |
 | OK | 🟩|
 | OK? | 🟨 |
 | NOT OK | 🟥 |
 | LOADING | ⬜ |
+-->
 
-> Este repositório está sendo constantemente atualizado, futuramente cada projeto terá uma aplicação diferente dentro de sí, visando o aprendizado de sua instalação dentro do script de automação de diferentes ambientes.
 
+<!--
 | project | ok? | description |
 | --- | --- | --- |
 | Alma Linux | 🟩 | for redhat environments |
@@ -86,3 +90,4 @@ e depois `vagrant plugin install vagrant-libvirt` para instalar o plugin
 | ubuntu | 🟩 | ubuntu simple image |
 | ubuntu-02 | 🟩 | future customizations |
 | windows | 🟩 | for virtualbox |
+-->
