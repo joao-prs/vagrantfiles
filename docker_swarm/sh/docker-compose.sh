@@ -113,7 +113,8 @@ docker stack deploy --compose-file docker-compose.yaml grafana
 
 ###############################################################
 
-
+mkdir -p /home/vagrant/bookstack
+cat << EOF >> /home/vagrant/bookstack/docker-compose.yaml
 version: "3.4"
 services:
   bookstack:
@@ -137,5 +138,8 @@ services:
       PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
     ports:
       - 9033:8080
+EOF
+cd /home/vagrant/bookstack
+docker stack deploy --compose-file docker-compose.yaml bookstack
 
 ###############################################################
