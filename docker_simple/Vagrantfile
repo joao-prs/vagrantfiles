@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
   config.vm.define :DockerSimple do |doc|
     
     # config box & VM
-    doc.vm.box = "generic/ubuntu2004"
+    doc.vm.box = "generic/ubuntu2204"
     doc.vm.hostname = "docker"
     doc.vm.provision "shell", path: "initial.sh"
 
