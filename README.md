@@ -61,6 +61,7 @@ sudo pacman -S vagrant
 yay -S vagrant
 ```
 
+
 e depois `vagrant plugin install vagrant-libvirt` para instalar o plugin
 
 ### 🟦 testados e atualizados
