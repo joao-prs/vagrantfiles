@@ -15,7 +15,7 @@ Uma piscina de arquivos vagrantfile para subir vms de diferentes tipos e configu
 Futuramente todas as pastas de pequenos labs vão ter páginas de readme com algum comentário.
 
 ### 🟦 Instalar o vagrant
-instalando `vagrant` em sistemas baseados em debian
+instalando `vagrant` em sistemas baseados em ***Debian***
 
 ```bash
 # method 1
@@ -37,7 +37,7 @@ sudo aptitude update
 sudo aptitude -y install vagrant
 ```
 
-instalando `vagrant` em sistemas baseados em RHEL
+instalando `vagrant` em sistemas baseados em ***RHEL***
 ```bash
 # method 1
 sudo dnf -y update 
@@ -51,7 +51,7 @@ sudo wget https://releases.hashicorp.com/vagrant/2.2.2/vagrant_2.2.2_x86_64.rpm
 sudo yum –y localinstall vagrant_2.2.2_x86_64.rpm
 ```
 
-instalando `vagrant` em sistemas baseados em Arch
+instalando `vagrant` em sistemas baseados em ***Arch***
 ```bash
 # method 1
 sudo pacman -S vagrant
