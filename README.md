@@ -1,11 +1,18 @@
 <!--
 ![imagem](.asciiart/capa.jpg)
--->
+
 <p align="center">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=git,bash,ruby,jenkins,linux"/>
   </a>
 </p>
+-->
+
+
+<!--
+https://cdn.worldvectorlogo.com/logos/vagrant.svg
+-->
+<img style="float: right;" src="https://cdn.worldvectorlogo.com/logos/vagrant.svg" width=15%>
 
 ### 🟦 Sobre o Vagrant
 Fluxo de trabalho único para criar e gerenciar ambientes de máquinas virtuais. **Melhora o tempo de configuração do desenvolvimento**, o arquivo de configuração declarativa descreve todos os requisitos e os constrói por meio de um fluxo de trabalho consistente. **Aumente a paridade de produção**, o arquivo de configuração declarativa descreve todos os requisitos e os constrói por meio de um fluxo de trabalho consistente. Espelhe ambientes de produção fornecendo o mesmo sistema operacional, pacotes, usuários e configurações, ao mesmo tempo em que oferece aos usuários a flexibilidade de usar seu editor, IDE e navegador favoritos. para saber mais, visite https://www.vagrantup.com/
