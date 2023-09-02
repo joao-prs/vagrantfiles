@@ -14,7 +14,19 @@
   </a>
 </p>
 
-Fluxo de trabalho único para criar e gerenciar ambientes de máquinas virtuais. **Melhora o tempo de configuração do desenvolvimento**, o arquivo de configuração declarativa descreve todos os requisitos e os constrói por meio de um fluxo de trabalho consistente. **Aumente a paridade de produção**, o arquivo de configuração declarativa descreve todos os requisitos e os constrói por meio de um fluxo de trabalho consistente. Espelhe ambientes de produção fornecendo o mesmo sistema operacional, pacotes, usuários e configurações, ao mesmo tempo em que oferece aos usuários a flexibilidade de usar seu editor, IDE e navegador favoritos. para saber mais, visite https://www.vagrantup.com/
+
+<table>
+  <tr>
+    <td width=40%>
+      Fluxo de trabalho único para criar e gerenciar ambientes de máquinas virtuais. Melhora o tempo de configuração do desenvolvimento, o arquivo de configuração declarativa descreve todos os requisitos e os constrói por meio de um fluxo de trabalho consistente.
+    </td>
+    <td>
+      Aumente a paridade de produção, o arquivo de configuração declarativa descreve todos os requisitos e os constrói por meio de um fluxo de trabalho consistente. Espelhe ambientes de produção fornecendo o mesmo sistema operacional, pacotes, usuários e configurações, ao mesmo tempo em que oferece aos usuários a flexibilidade de usar seu editor, IDE e navegador favoritos. para saber mais, visite https://www.vagrantup.com/
+    </td>
+  </tr>
+</table>
+
+
 
 ### 🟦 Este repositório
 Uma piscina de arquivos vagrantfile para subir vms de diferentes tipos e configurações, para a construção desses ambientes foi utilizado o **virt-manager**, então os arquivos vagrantfiles chamam pelo plugin do **libvirt** no inicio de cada arquivo *Vagrantfile*. Entre na pasta desejada e digite `vagrant up`
