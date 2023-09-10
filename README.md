@@ -4,14 +4,10 @@
 <img style="float: right;" src="https://cdn.worldvectorlogo.com/logos/vagrant.svg" width=15%>
 
 -->
-
-
 ### 🟦 Sobre o Vagrant
 
 <p align="center">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=v"/>
-  </a>
+  <a href="https://www.vagrantup.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/vagrantup/vagrantup-icon.svg" alt="vagrant" width="40" height="40"/> </a>
 </p>
 
 
