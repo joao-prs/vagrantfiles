@@ -61,3 +61,10 @@ Depois `vagrant plugin install vagrant-libvirt` para instalar o plugin
 | ubuntu-02 | 🟩 | future customizations |
 | windows | 🟩 | for virtualbox |
 -->
+
+### 🟦 Algumas das Distros
+- <a href="https://github.com/joao-prs/vagrantfiles/blob/main/alma/desc.md">Alma Linux</a>
+- <a href="https://github.com/joao-prs/vagrantfiles/blob/main/centos/desc.md">CentOS</a>
+- <a href="https://github.com/joao-prs/vagrantfiles/blob/main/oracle/desc.md">Oracle Linux</a>
+- <a href="https://github.com/joao-prs/vagrantfiles/blob/main/rocky/desc.md">Rocky Linux</a>
+- <a href="https://github.com/joao-prs/vagrantfiles/blob/main/ubuntu/desc.md">Ubuntu</a>
