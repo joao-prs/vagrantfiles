@@ -33,10 +33,6 @@ Aprenda a instalar o `vagrant` em seu ambiente clicando <a href="https://github.
 
 Depois `vagrant plugin install vagrant-libvirt` para instalar o plugin
 
-### 🟦 testados e atualizados
-
-> Este repositório está sendo constantemente atualizado, futuramente cada projeto terá uma aplicação diferente dentro de sí, visando o aprendizado de sua instalação dentro do script de automação de diferentes ambientes.
-
 <!--
 | description | status emoji |
 | --- | --- |
@@ -68,3 +64,5 @@ Depois `vagrant plugin install vagrant-libvirt` para instalar o plugin
 - <a href="https://github.com/joao-prs/vagrantfiles/blob/main/oracle/desc.md">Oracle Linux</a>
 - <a href="https://github.com/joao-prs/vagrantfiles/blob/main/rocky/desc.md">Rocky Linux</a>
 - <a href="https://github.com/joao-prs/vagrantfiles/blob/main/ubuntu/desc.md">Ubuntu</a>
+
+> Este repositório está sendo constantemente atualizado, futuramente cada projeto terá uma aplicação diferente dentro de sí, visando o aprendizado de sua instalação dentro do script de automação de diferentes ambientes.
