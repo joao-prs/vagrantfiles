@@ -58,11 +58,11 @@ Depois `vagrant plugin install vagrant-libvirt` para instalar o plugin
 | windows | 🟩 | for virtualbox |
 -->
 
-### 🟦 Algumas das Distros
+### 🟦 Algumas das distros deste repo
 - <a href="https://github.com/joao-prs/vagrantfiles/blob/main/alma/desc.md">Alma Linux</a>
 - <a href="https://github.com/joao-prs/vagrantfiles/blob/main/centos/desc.md">CentOS</a>
 - <a href="https://github.com/joao-prs/vagrantfiles/blob/main/oracle/desc.md">Oracle Linux</a>
 - <a href="https://github.com/joao-prs/vagrantfiles/blob/main/rocky/desc.md">Rocky Linux</a>
 - <a href="https://github.com/joao-prs/vagrantfiles/blob/main/ubuntu/desc.md">Ubuntu</a>
 
-> Este repositório está sendo constantemente atualizado, futuramente cada projeto terá uma aplicação diferente dentro de sí, visando o aprendizado de sua instalação dentro do script de automação de diferentes ambientes.
+> Este repositório está sendo constantemente atualizado, futuramente cada projeto terá uma aplicação diferente dentro de sí, visando o aprendizado de sua instalação dentro do script de automação de diferentes ambientes. ☺️
