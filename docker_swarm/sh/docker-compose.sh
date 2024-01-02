@@ -23,19 +23,39 @@ docker stack deploy --compose-file docker-compose.yaml portainer
 
 mkdir -p /home/vagrant/nginx/vol
 cat << EOF >> /home/vagrant/nginx/docker-compose.yaml
+#version: "3"
+#services:
+#  web:
+#    image: nginx
+#    volumes:
+#    - ./templates:/etc/nginx/templates
+#    ports:
+#    - "80:80"
+#    environment:
+#    - NGINX_HOST=foobar.com
+#    - NGINX_PORT=80
+#    volumes:
+#    - /home/vagrant/nginx/vol:/usr/share/nginx/html
+
+
 version: "3"
 services:
   web:
     image: nginx
-    volumes:
-    - ./templates:/etc/nginx/templates
+    deploy:
+      replicas: 5
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+      restart_policy:
+        condition: on-failure
     ports:
-    - "80:80"
-    environment:
-    - NGINX_HOST=foobar.com
-    - NGINX_PORT=80
-    volumes:
-    - /home/vagrant/nginx/vol:/usr/share/nginx/html
+    - "8080:80"
+    networks:
+    - webserver
+networks:
+  webserver:
 EOF
 cd /home/vagrant/nginx
 #docker-compose up -d
