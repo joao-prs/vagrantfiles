@@ -31,32 +31,12 @@ Futuramente todas as pastas de pequenos labs vão ter páginas de readme com alg
 
 Aprenda a instalar o `vagrant` em seu ambiente clicando <a href="https://github.com/joao-prs/vagrantfiles/blob/main/README_INSTALL.md">aqui</a>.
 
-Depois `vagrant plugin install vagrant-libvirt` para instalar o plugin
-
-<!--
-| description | status emoji |
-| --- | --- |
-| OK | 🟩|
-| OK? | 🟨 |
-| NOT OK | 🟥 |
-| LOADING | ⬜ |
--->
-
-
-<!--
-| project | ok? | description |
-| --- | --- | --- |
-| Alma Linux | 🟩 | for redhat environments |
-| CentOS | 🟩 | for redhat environments |
-| docker_simple | 🟩 | docker with configured nginx |
-| docker_swarm | 🟩 | docker with swarm tests |
-| jenkins | 🟩 | Jenkins for tests |
-| mariadb-cluster | 🟩 | Database cluster using Galera with 3 machines |
-| Rocky Linux | 🟩 | Rocky with configured cockpit |
-| ubuntu | 🟩 | ubuntu simple image |
-| ubuntu-02 | 🟩 | future customizations |
-| windows | 🟩 | for virtualbox |
--->
+Depois `vagrant plugin install vagrant-libvirt` para instalar o plugin, se houver erros para instalar plugins, verifique se esta instalado `base-devel`.
+Se você tiver problemas com incompatibilidade de dependências, a variavel de ambiente a seguir pode ser definida para ignorar versões de gem.
+```bash
+export VAGRANT_DISABLE_STRICT_DEPENDENCY_ENFORCEMENT=1
+```
+OU siga os passos da resolução deste problema <a href="https://wiki.archlinux.org/title/Vagrant">aqui</a> na documentação do archlinux.
 
 ### 🟦 Algumas das distros deste repo
 - <a href="https://github.com/joao-prs/vagrantfiles/blob/main/alma/desc.md">Alma Linux</a>
