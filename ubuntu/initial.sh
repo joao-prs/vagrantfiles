@@ -22,7 +22,6 @@ echo 'export HISTTIMEFORMAT="%d/%m/%y %T "' >> ~/.bashrc
 # timezone
 timedatectl set-timezone America/Belem
 
-
 ############################
 #                          #
 #    criação do usuario    #
@@ -37,7 +36,6 @@ timedatectl set-timezone America/Belem
 # sudo chown -R ansible:ansible /home/ansible/.ssh
 # sudo chmod 700 /home/ansible/.ssh
 # sudo chmod 600 /home/ansible/.ssh/authorized_keys
-
 
 # show ip when finish the process
 #ip -br a
