@@ -24,6 +24,19 @@ e execute:
 systemctl restart wicked
 ```
 
-
 ### 0.0.4
-- criei duas interfaces para resolver o problema
+- criei duas interfaces para resolver o problema, não resolveu o problema, mas pelo menos alivia a necessidade de precisar que uma delas permaneça inalteravel.
+
+então tornei a `/etc/sysconfig/network/ifcfg-eth0` assim:
+```conf
+BOOTPROTO='static'
+IPADDR='192.168.121.100/24'
+NETMASK='255.255.255.0'
+STARTMODE='auto'
+GATEWAY='192.168.121.1'
+```
+e adicionei uma segunda que sofra o bug:
+```conf
+BOOTPROTO='dhcp'
+STARTMODE='auto'
+```
