@@ -22,7 +22,6 @@ post '/submit' do
   "Olá, #{params[:name]}! Você tem #{params[:age]} anos."
 end
 
-
 # Rota para a página de imagem e texto
 get '/image-page' do
   '<h1>Página com Imagem e Texto</h1>
