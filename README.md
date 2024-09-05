@@ -14,7 +14,6 @@
   <a href="https://www.vagrantup.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/vagrantup/vagrantup-icon.svg" alt="vagrant" width="60" height="60"/> </a>
 </p>
 
-
 <table>
   <tr>
     <td width=40%>
@@ -26,17 +25,14 @@
   </tr>
 </table>
 
-
-
 ### 🟦 Este repositório
 Uma piscina de arquivos vagrantfile para subir vms de diferentes tipos e configurações, para a construção desses ambientes foi utilizado o **virt-manager**, então os arquivos vagrantfiles chamam pelo plugin do **libvirt** no inicio de cada arquivo *Vagrantfile*. Entre na pasta desejada e digite `vagrant up`
 Futuramente todas as pastas de pequenos labs vão ter páginas de readme com algum comentário.
 
-
 Aprenda a instalar o `vagrant` em seu ambiente clicando <a href="https://github.com/joao-prs/vagrantfiles/blob/main/README_INSTALL.md">aqui</a>.
 
 Depois `vagrant plugin install vagrant-libvirt` para instalar o plugin, se houver erros para instalar plugins, verifique se esta instalado `base-devel`.
-Se você tiver problemas com incompatibilidade de dependências, a variavel de ambiente a seguir pode ser definida para ignorar versões de gem.
+Se você tiver problemas com incompatibilidade de dependências, a variavel de ambiente a seguir pode ser definida para ignorar versões de **gem**.
 ```bash
 export VAGRANT_DISABLE_STRICT_DEPENDENCY_ENFORCEMENT=1
 ```
