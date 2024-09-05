@@ -38,12 +38,9 @@ export VAGRANT_DISABLE_STRICT_DEPENDENCY_ENFORCEMENT=1
 ```
 OU siga os passos da resolução deste problema <a href="https://wiki.archlinux.org/title/Vagrant">aqui</a> na documentação do archlinux.
 
-### 🟦 Algumas das distros deste repo
-- <a href="https://github.com/joao-prs/vagrantfiles/blob/main/alma/desc.md">Alma Linux</a>
-- <a href="https://github.com/joao-prs/vagrantfiles/blob/main/centos/desc.md">CentOS</a>
-- <a href="https://github.com/joao-prs/vagrantfiles/blob/main/oracle/desc.md">Oracle Linux</a>
-- <a href="https://github.com/joao-prs/vagrantfiles/blob/main/rocky/desc.md">Rocky Linux</a>
-- <a href="https://github.com/joao-prs/vagrantfiles/blob/main/ubuntu/desc.md">Ubuntu</a>
+### 🟦 Sumário
+- **OS**: Vagrantfiles de sistemas operacionais distintos para testar
+- **Applications**: Vagrantfiles para testar algumas aplicações
 
 > [!NOTE]
 > Este repositório está sendo constantemente atualizado, futuramente cada projeto terá uma aplicação diferente dentro de sí, visando o aprendizado de sua instalação dentro do script de automação de diferentes ambientes. ☺️
