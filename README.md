@@ -4,6 +4,10 @@
 <img style="float: right;" src="https://cdn.worldvectorlogo.com/logos/vagrant.svg" width=15%>
 
 -->
+
+<!--
+
+-->
 ### 🟦 Sobre o Vagrant
 
 <p align="center">
