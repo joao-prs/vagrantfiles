@@ -10,5 +10,6 @@ vim app.rb # edite este arquivo
 
 ruby app.rb
 
+# outros comandos
 gem list sinatra
 ```
