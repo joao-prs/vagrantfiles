@@ -6,13 +6,27 @@
   </a>
 </p>
 
+O vagrant precisa utilizar um motor de virtualização para funcionar por virtualbox ou libvirt
+```bash
+#
+sudo apt-get -y install virtualbox
+sudo dnf -y install virtualbox
+yay -S virtualbox
+
+sudo apt install -y libvirt-daemon-system libvirt-clients bridge-utils
+sudo apt install -y qemu-kvm
+sudo usermod -aG libvirt $(whoami)
+
+```
+
 instalando `vagrant` em sistemas baseados em 
 ![Arch](https://img.shields.io/badge/-Debian-ffffff?style=plastic&logo=debian&logoColor=red)
 ```bash
 # method 1
 sudo apt -y upgrade
-wget https://releases.hashicorp.com/vagrant/2.2.19/vagrant_2.2.19_x86_64.deb
-sudo apt install ./vagrant_2.2.19_x86_64.deb
+wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt install vagrant
 vagrant --version
 ```
 ```bash
